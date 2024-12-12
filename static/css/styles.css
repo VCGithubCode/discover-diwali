@@ -10674,7 +10674,8 @@ header.masthead {
   margin-bottom: 3rem;
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
-  background-image: url('../img/festival-of-lights.jpg');
+/* Photo by Balaji J: https://www.pexels.com/photo/lighted-candles-on-flowers-11661801/ */
+  background-image: url('/static/img/festival-of-lights.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #6c757d;
