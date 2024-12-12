@@ -1,54 +1,62 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# 🎅✨ Hack the Holidays! 🎄🎁  
 
-Welcome,
-
-This is the Code Institute student template for using Mongo. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about this template and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 23rd, 2024**
-
-## IDE Reminders
-
-### Connecting your database
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-### Other commands
-
-#### Clear screen in Mongo Shell:
-
-- `cls`
-
-#### Show all database collections:
-
-- `show collections`
-
-#### Run your project
-
-As we need to run a backend Python file, we should use the command `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In most cloudbased IDEs you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-### To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In your IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**THIS TEMPLATE IS ONLY TO BE USED FOR THE DECEMBER HACKATHON PROJECT**  
+Please do not use it for course project work.  
 
 ---
 
-Happy coding!
+## **🎄 Hack the Holidays: Submission Details**  
+
+### **Deployment**  
+(Please note: Your team must also include the deployed links in the usual submission in Hackapp.)  
+The project is deployed and can be accessed at:  
+**http://your-deployed-link.com**  
+
+---
+
+### **Criteria**  
+In this section, we will briefly discuss how our team addressed the applicable criteria:  
+- 🎁 **The project fits the theme of celebrating the holidays.**  
+- 🎁 **The project is well planned and executed (Using GitHub Projects/Kanban).**  
+- 🎁 **The project has a basic README that follows the provided template.**  
+- 🎁 **The project has an overall sense of completeness.**  
+- 🎁 **The project showcases a strong sense of creativity and originality.**  
+
+---
+
+## **🎅 About the Submission**  
+
+### **Intro**  
+One or two paragraphs providing an overview of our project.  
+This could include how our project embodies the **Hack the Holidays** spirit and what makes it unique.  
+
+---
+
+### **Goal**  
+The **Goal** section provides a concise summary of the main objective or purpose of the project described in this README. It addresses the following aspects:  
+
+- 🎄 **Problem Statement:** A brief description of the holiday-related issue or gap our project aims to address.  
+- 🎄 **Objective(s):** What does our project set out to achieve?  
+- 🎄 **Target Audience:** Who will benefit from this project?  
+- 🎄 **Benefits:** How will this project make the holidays brighter, more inclusive, or more joyful?  
+
+---
+
+## **💻 Tech Stack**  
+In the **Tech** section, we provide information about the technology stack, dependencies, and any technical details related to the project.  
+For example:  
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Python, Flask  
+- Database: PostgreSQL  
+- Version Control: Git & GitHub  
+- Deployment: [Insert Deployment Platform, e.g., Heroku, Netlify, etc.]  
+
+---
+
+## **🌟 Credits**  
+In the **Credits** section, we acknowledge the resources, tools, or inspirations used in this project, such as:  
+- Any tutorials or articles referenced  
+- Any open-source libraries or frameworks  
+- Any special mentions for contributors, teammates, or mentors  
+
+---
