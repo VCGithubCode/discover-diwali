@@ -60,4 +60,5 @@ In the **Credits** section, we acknowledge the resources, tools, or inspirations
 - Any special mentions for contributors, teammates, or mentors  
 
 #### Jonathan Dussot
+#### Vernell Clark
 ---
