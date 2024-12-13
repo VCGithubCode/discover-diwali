@@ -11104,3 +11104,311 @@ nav a .nav-link {
 nav li {
   margin-left: 1rem;
 }
+
+/* ---------------------- Play.html styling ------------------------ */ 
+/* Style Quiz Header */
+.title {
+  -webkit-text-emphasis-color: #900a0a;
+  text-emphasis-color: #900a0a;
+  float: left;
+  font-family: 'Samarkan', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #0C3D40;
+  margin: 30px 0 0 50px;
+}
+
+/* Style Modal buttons */
+div#instructions.modal {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  right: 50%;
+  height: 56%;
+  width: 50%;
+  -webkit-transform: translate(-51%, -3%);
+      -ms-transform: translate(-51%, -3%);
+          transform: translate(-51%, -3%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  z-index: 10;
+  border: 0.5px solid #800707;
+  border-radius: 6px;
+  padding: 2%;
+  text-align: center;
+  letter-spacing: .05em;
+  overflow: auto;
+}
+button.btn {
+  color: #66CCCC;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+span.close {
+  color: #ffffff !important;
+  float: right;
+  font-size: 28px;
+}
+span.close:hover {
+  color: #ea070b !important;
+  text-decoration: none;
+}
+.cl {
+  display: none;
+}
+#guide-list {
+  text-align: left !important;
+}
+
+/* Style menu elements */
+.menu-items {
+  float: right;
+  margin: 55px 50px 0 0;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  color: #f9fbfb;
+}
+.menu-items li {
+  background-color: #0C3D40;
+}
+
+/* Style Quiz box */
+main.container-fluid {
+  height: 80vh;
+  border: 1px solid #000000;
+  overflow: hidden;
+  position: relative;
+  padding: 2%;  
+}
+.question-box {
+  background-color: rgba(248, 216, 100, 0.8);
+  color: rgb(4, 4, 4);
+  border: 0.5px solid #800707;
+  border-radius: 6px;
+  font-family: "Space Mono", monospace, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  height: 10vh;
+}
+
+/* Display score */
+.score {
+  font-weight: 700;
+  font-size: xx-large;
+  height: 10vh;
+  margin-top: 10%;
+  width: fit-content;
+}
+
+/* Style the answer option buttons and classes that are to be applied based on user interaction */
+p.ans {
+  width: 42%;
+  cursor: pointer;
+}
+.ans {
+  background-color: rgba(248, 216, 100, 0.6);
+  color: #800707;
+  height: 6vh;
+  border: 0.5px solid #800707;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 42%;
+  cursor: pointer;
+}
+.ans:hover {
+  background-color: rgba(230, 220, 200, 0.6);
+}
+.green {
+  background-color: green !important;
+}
+.red {
+  background-color: #ea070b !important;
+}
+#option1,
+#option2,
+#option3,
+#option4,
+#next {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 42%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-bottom: 10px;
+  max-width: 100%;
+  padding: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+  cursor: pointer;
+}
+#next {
+  background-color: rgba(248, 216, 100, 0.6);
+  color: #800707;
+  font-size: large;
+  font-weight: 700;
+  height: 6vh;
+  border: 0.5px solid #800707;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 42%;
+  cursor: pointer;
+}
+#next:hover {
+  
+    background-color: rgba(230, 220, 200, 0.6);
+  }
+
+/* Style responsive UX */
+/* For screen sizes with widths less than 1300px */
+@media screen and (max-width: 1500px) {
+  .title {
+    -webkit-text-emphasis-color: #900a0a;
+  text-emphasis-color: #900a0a;
+  float: left;
+  font-family: 'Samarkan', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #0C3D40;
+  margin: 30px 0 0 50px;
+  }
+  .container {
+    width: 60%;
+  }
+}
+
+/* For screen sizes with widths less than 768px */
+@media screen and (max-width: 768px) {
+  .title {
+    color: #0C3D40;
+    font: 500 1em/1 'Samarkan', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+    margin: 30px 0 0 50px;
+  }
+  .ans {
+    margin-left: 0%;
+    height: fit-content;
+  }
+  .container {
+    width: 22.875rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .container {
+    width: 63%;
+    height: 95%;
+  }
+}
+
+/* For screen sizes with widths less than 450px */
+@media screen and (max-width: 450px) {
+  /* index.html page */
+  .title {
+    color: #0C3D40;
+    font: 500 1em/1 'Samarkan', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+  }
+  .ans {
+    margin-left: 0%;
+    height: fit-content;
+  }
+  .container {
+    font-size: 236%;
+    margin-left: 25px;
+    margin-bottom: -3.5rem;
+  }
+  button.btn {
+    color: #66CCCC;
+    font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+    font-size: xx-small;
+  }
+}
+/* For screen sizes with widths less than 320px */
+@media screen and (max-width: 320px) {
+  h1.title {
+    color: #0C3D40;
+    font: 500 1em/1 'Samarkan', Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: large;
+  }
+  .ans {
+    margin-left: 0%;
+    height: fit-content;
+  }
+}
+
+/* Style Discover page */
+.map-container {
+  text-align: center;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 900px;
+}
+.map-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+.india-map {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+.state-link {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 2px 8px;
+  text-align: center;
+  font-size: 0.9em;
+  cursor: pointer;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.state-link:hover {
+  background-color: #f0f0f0;
+  border-color: #666;
+}
+
+/* Position clickable state names */
+.uttar-pradesh {
+  top: 40%; /* Adjust percentage for accurate positioning */
+  left: 45%;
+}
+.west-bengal {
+  top: 42%;
+  left: 62%;
+}
+.gujarat {
+  top: 50%;
+  left: 20%;
+}
+.maharashtra {
+  top: 55%;
+  left: 30%;
+}
+.tamil-nadu {
+  top: 78%;
+  left: 42%;
+}
+.kerala {
+  top: 85%;
+  left: 38%;
+}
+.karnataka {
+  top: 72%;
+  left: 35%;
+}
+.punjab {
+  top: 20%;
+  left: 38%;
+}
+.rajasthan {
+  top: 35%;
+  left: 28%;
+}
+

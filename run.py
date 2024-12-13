@@ -16,14 +16,14 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/discover')
-def discover():
-    return render_template("discover.html")
+@app.route('/map')
+def map():
+    return render_template("map.html")
 
 
-@app.route('/play')
-def play():
-    return render_template("play.html")
+@app.route('/quiz')
+def quiz():
+    return render_template("quiz.html")
 
 
 @app.route('/about')
