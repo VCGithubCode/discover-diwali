@@ -1,5 +1,33 @@
 {% extends "base.html" %}
+
 {% block content %}
-	<h1>Welcome to Diwali Discovery's Discover/Learn Page</h1>
-	<p>Discover how different states in India celebrate Diwali</p>
+    <div class="map-container">
+        <h1>Discover Diwali Celebrations Across India</h1>
+        <p>Click on a state to learn how Diwali is celebrated in different regions.</p>
+        
+        <!-- India Map -->
+        <div class="map-wrapper">
+            
+			<img src="{{ url_for('static', filename='img/india-map.gif') }}" alt="India Map" class="india-map">
+            
+            <!-- Clickable states -->
+            <div class="state-link uttar-pradesh" data-state="Uttar Pradesh">Uttar Pradesh</div>
+			<div class="state-link west-bengal" data-state="West Bengal">West Bengal</div>
+			<div class="state-link gujarat" data-state="Gujarat">Gujarat</div>
+			<div class="state-link maharashtra" data-state="Maharashtra">Maharashtra</div>
+			<div class="state-link tamil-nadu" data-state="Tamil Nadu">Tamil Nadu</div>
+			<div class="state-link kerala" data-state="Kerala">Kerala</div>
+			<div class="state-link karnataka" data-state="Karnataka">Karnataka</div>
+			<div class="state-link punjab" data-state="Punjab">Punjab</div>
+			<div class="state-link rajasthan" data-state="Rajasthan">Rajasthan</div>
+
+        </div>
+    </div>
+
+    <script>
+        function navigateToState(state) {
+            // Redirect to a detailed state page
+            window.location.href = `/state/${state}`;
+        }
+    </script>
 {% endblock %}
