@@ -51,6 +51,17 @@ def error500():
     return render_template("500.html")
 
 
+@app.route('/state/<state_name>')
+def state_details(state_name):
+    # Fetch state details from the MongoDB collection
+    state = db["states"].find_one({"state": state_name}, {"_id": 0})
+    if state:
+        return render_template("state_details.html", state=state)
+    else:
+        return render_template("404.html"), 404
+
+
+
 #SECURITY WARNING: Don't run with debug turned on in production!
 if __name__ == '__main__':
     app.run(
