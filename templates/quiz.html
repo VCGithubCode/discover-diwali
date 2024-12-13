@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page">
+    <header>
+      <h1 class="title">Diwali Quiz</h1>
+      <ul class="menu-items">
+        <li class="list-inline-item">
+          <button aria-label="Guide" class="btn">
+            <i class="fa-solid fa-table-list"></i> Guide
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button id="toggleMusic" class="btn btnMusic">
+            <i class="fa-solid fa-music"></i> Music Toggle
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button onclick="resetGame()" aria-label="Reset game" class="btn btn-reset">
+            Reset
+          </button>
+        </li>
+      </ul>
+      
+      <!-- Instructions Modal -->
+      <div onclick="closeModal(event)" id="instructions" class="modal">
+        <span class="close">&times;</span>
+        <h5>Instructions to Play</h5>
+        <h6>Welcome to the Diwali-themed quiz! Test your knowledge of Diwali's rich history, customs, and celebrations.</h6>
+        <ol id="guide-list">
+          <li>Click "Music On" to start background music.</li>
+          <li>Select the correct answer for each question.</li>
+          <li>After 10 questions, you will see your final score.</li>
+          <li>To play again, click "Reset" at the top.</li>
+          <li>Enjoy the quiz and learn more about Diwali!</li>
+        </ol>
+      </div>
+    </header>
+    <main class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-6 m-2 question-box">
+          <p class="text-center mt-lg-2" id="question">Question goes here</p>
+        </div>
+        <div class="row justify-content-center">
+          <button onclick="enterAnswer(event)" class="ans" id="option1">Answer 1</button>
+        </div>
+        <div class="row justify-content-center">
+          <button onclick="enterAnswer(event)" class="ans" id="option2">Answer 2</button>
+        </div>
+        <div class="row justify-content-center">
+          <button onclick="enterAnswer(event)" class="ans" id="option3">Answer 3</button>
+        </div>
+        <div class="row justify-content-center">
+          <button onclick="enterAnswer(event)" class="ans" id="option4">Answer 4</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <button id="next" aria-label="Next question">Next</button>
+      </div>
+    </main>
+    <footer></footer>
+    <audio id="music" src="{{ url_for('static', filename='music/backgroundmusic.mp3') }}" loop autoplay></audio>
+  </div>
+{% endblock %}
