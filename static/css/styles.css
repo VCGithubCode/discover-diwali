@@ -11421,3 +11421,97 @@ p.ans {
   color: #000;
 }
 
+
+/* -------- Style the countdown timer and holiday messages --------*/
+.countdown-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.countdown-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.countdown-box {
+  background: linear-gradient(145deg, #FF9933, #FF4D00);
+  border-radius: 10px;
+  padding: 1rem;
+  min-width: 100px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.countdown-number {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.festival-message {
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #FFD700, #FFA500);
+  color: #000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* High Contrast Mode */
+[data-bs-theme="contrast"] .countdown-box {
+  background: #000 !important;
+  border: 2px solid #fff;
+}
+
+[data-bs-theme="contrast"] .festival-message {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff;
+}
+
+/* Font Size Adjustments */
+.font-size-small .countdown-number {
+  font-size: 1.5rem;
+}
+
+.font-size-large .countdown-number {
+  font-size: 2.5rem;
+}
+
+.font-size-small .festival-message {
+  font-size: 1rem;
+}
+
+.font-size-large .festival-message {
+  font-size: 1.4rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { visibility: hidden; }
+  to { visibility: visible; }
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes celebrate {
+  0% { scale: 1; }
+  50% { scale: 1.05; }
+  100% { scale: 1; }
+}
+
+.celebrating .countdown-box {
+  animation: celebrate 2s infinite;
+}
