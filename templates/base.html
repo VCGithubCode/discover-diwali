@@ -39,7 +39,7 @@
             </div>
         </nav>
         <!-- Page Header-->
-
+        
         <header class="masthead">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -47,6 +47,31 @@
                         <div class="site-heading">
                             <h1>Discover Diwali</h1>
                             <span class="subheading">An exploration of Diwali</span>
+        
+                            <div id="diwali-countdown" class="text-center mt-4">
+                                <div class="countdown-container">
+                                    <div class="countdown-boxes">
+                                        <div class="countdown-box">
+                                            <span id="days" class="countdown-number">00</span>
+                                            <span class="countdown-label">Days</span>
+                                        </div>
+                                        <div class="countdown-box">
+                                            <span id="hours" class="countdown-number">00</span>
+                                            <span class="countdown-label">Hours</span>
+                                        </div>
+                                        <div class="countdown-box">
+                                            <span id="minutes" class="countdown-number">00</span>
+                                            <span class="countdown-label">Minutes</span>
+                                        </div>
+                                        <div class="countdown-box">
+                                            <span id="seconds" class="countdown-number">00</span>
+                                            <span class="countdown-label">Seconds</span>
+                                        </div>
+                                    </div>
+                                    <div id="festival-message" class="festival-message mt-3" role="alert" aria-live="polite">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,6 +183,8 @@
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <!-- Theme JS-->
         <script src="{{ url_for('static', filename='js/theme-switcher.js') }}"></script>
+        <!-- Countdown JS-->
+        <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
         <!-- Map JS-->
         <script src="{{ url_for('static', filename='js/map.js') }}"></script>
         <!-- Quiz JS-->
