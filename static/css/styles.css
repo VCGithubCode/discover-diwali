@@ -11515,3 +11515,15 @@ p.ans {
 .celebrating .countdown-box {
   animation: celebrate 2s infinite;
 }
+/* error page styles - yet to finish styling */
+
+#error-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#error-img img {
+  width: 300px;
+  object-fit: contain;
+}
