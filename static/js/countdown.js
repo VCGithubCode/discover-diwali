@@ -86,7 +86,7 @@ class DiwaliCountdown {
 
   update() {
         // Use simulated date for testing or real current date
-        const now = this.simulatedDate || new Date(); // Simulate date for testing here Example: new Date(2025, 9, 20);
+        const now = this.simulatedDate || new Date(2025, 9, 21); // Simulate date for testing here Example: new Date(2025, 9, 20);
         const currentYear = now.getFullYear();
         const currentDates = this.diwaliDates[currentYear] || this.diwaliDates[2025];
 
