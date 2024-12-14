@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="state-details">
+        <h1>{{ state.state }}</h1>
+        <p><strong>Regional Story:</strong> {{ state.regional_story }}</p>
+        <p><strong>Regional Traditions:</strong> {{ state.regional_traditions }}</p>
+        <p><strong>Regional Delicacies:</strong></p>
+        <ul>
+            {% for item in state.regional_delicacies %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('map') }}" class="btn btn-primary">Back to Map</a>
+    </div>
+{% endblock %}
