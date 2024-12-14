@@ -118,7 +118,7 @@ def login():
         
         user = users_collection.find_one({"username": username})
         if user and check_password_hash(user["password"], password):
-            session["user"] = username
+            session["user"] = username  # Set session.user
             flash("Login successful!", "success")
             return redirect(url_for("quiz"))
         else:
@@ -130,10 +130,10 @@ def login():
 # User logout
 @app.route('/logout')
 def logout():
-    session.pop("user", None)
+    session.pop("user", None)  # Remove session.user
     flash("You have been logged out.", "success")
     return redirect(url_for("index"))
-
+    
 
 # Quiz completion endpoint
 @app.route('/quiz_complete', methods=["POST"])

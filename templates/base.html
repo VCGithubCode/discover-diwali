@@ -45,16 +45,16 @@
                                 href="{{ url_for('about') }}">About</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                                 href="{{ url_for('contact') }}">Contact</a></li>
-                    {% if session.get('logged_in') %}
+                    {% if session.user %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('logout') }}">Logout</a></li>
                         <li class="nav-item">
-                            <span class="nav-link px-lg-3 py-3 py-lg-4">Welcome, {{ session.get('username') }}!</span>
+                            <span class="nav-link px-lg-3 py-3 py-lg-4">Welcome, {{ session.user }}!</span>
                         </li>
                     {% else %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('register') }}">Register</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('login') }}">Login</a></li>
-                    {% endif %}                        
+                    {% endif %}                                                   
                         <li><button class="btn btn-secondary mt-2" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
                                 class="fas fa-universal-access"></i> Accessibility</button></li>
