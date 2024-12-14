@@ -1,5 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
-	<h1>Welcome to Diwali Discovery's Contact Page</h1>
-	<p>Reach out to us and lets discover the joy of Diwali together!</p>
+	<section class="contact-header pt-5 pb-3">
+		<div class="container">
+		  <div class="text-center">
+			<h1>Contact Us</h1>
+			<p>Reach out to us and lets discover the joy of Diwali together!</p>
+		  </div>
+		</div>
+	  </section>
+	  <section class="contact-form">
+		<form id="contactForm" name="contactForm" onsubmit="return sendMail(this);">
+		  <div class="mb-2 ">
+			<h2 class="hidden-heading">&#8203;</h2>
+			<label for="name" class="contactlabel form-label">Your name</label>
+			<input type="text" name="name" id="name" class="form-control" required>
+			<div id="nameHelp" class="form-text">Please provide your preferred name.</div><br>
+		  </div>
+  
+		  <div class="mb-2">
+			<label for="email" class="contactlabel form-label">Your email</label>
+			<input type="email" name="email" id="email" class="form-control" required>
+			<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
+		  </div>
+  
+		  <div class="mb-3">
+			<label for="enquiry" class="contactlabel form-label">Your query</label>
+			<textarea rows="10" name="enquiry" id="enquiry" class="form-control" required></textarea>
+		  </div>
+  
+		  <div class="mb-3 form-check">
+			<input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+			<label class="form-check-label" for="exampleCheck1">I have read and agreed to the <a
+				href="https://www.termsfeed.com/live/fabff9bf-356e-4897-943b-4322ed3624ed">privacy
+				policy</a></label>
+		  </div>
+  
+		  <div class="mb-2">
+			<input id="submit-button" class="btn btn-primary" type="submit" value="Submit Message"
+			  aria-label="clicking submit will redirect to another page">
+		  </div>
+		</form>
+	  </section>
 {% endblock %}
