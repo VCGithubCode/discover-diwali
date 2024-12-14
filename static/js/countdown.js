@@ -1,12 +1,23 @@
 class DiwaliCountdown {
     constructor() {
-        this.daysEl = document.getElementById('days');
-        this.hoursEl = document.getElementById('hours');
-        this.minutesEl = document.getElementById('minutes');
-        this.secondsEl = document.getElementById('seconds');
-        this.messageEl = document.getElementById('festival-message');
+        // Cache DOM elements and add error handling
+        const elements = ['days', 'hours', 'minutes', 'seconds', 'festival-message'].reduce((acc, id) => {
+            const element = document.getElementById(id);
+            if (!element) {
+                throw new Error(`Required element #${id} not found`);
+            }
+            acc[id] = element;
+            return acc;
+        }, {});
+
+        this.daysEl = elements['days'];
+        this.hoursEl = elements['hours'];
+        this.minutesEl = elements['minutes'];
+        this.secondsEl = elements['seconds'];
+        this.messageEl = elements['festival-message'];
         this.countdownContainer = document.querySelector('.countdown-container');
 
+        // Month is 0-based in JavaScript (9 = October, 10 = November)
         this.diwaliDates = {
             2025: {
                 dhanteras: new Date(2025, 9, 20),
@@ -27,32 +38,68 @@ class DiwaliCountdown {
         };
 
         this.festivalMessages = {
-            dhanteras: "Welcome to Dhanteras!",
-            narakaChaturdasi: "Happy Choti Diwali!",
-            lakshmiPuja: "Happy Diwali!",
-            govardhanPuja: "Happy Govardhan Puja!",
-            bhaiDooj: "Happy Bhai Dooj!",
+            dhanteras: "✨ Welcome to Dhanteras! Today we celebrate new beginnings! Watch for twinkling lights! ✨",
+            narakaChaturdasi: "🪔 It's Choti Diwali! Time to light beautiful diyas and make rangoli! 🎨",
+            lakshmiPuja: "🎆 Happy Diwali! Today we celebrate with lights, sweets, and family fun! 🪔",
+            govardhanPuja: "🌟 Happy Govardhan Puja! Time to thank nature for its gifts! 🌺",
+            bhaiDooj: "❤️ Happy Bhai Dooj! Celebrating the special bond between brothers and sisters! 🤗"
         };
+
+        // Performance optimization: Cache the animation frame request
+        this.animationFrameId = null;
+        this.intervalId = null;
 
         this.init();
     }
 
     init() {
+        // Initial update
         this.update();
-        setInterval(() => this.update(), 1000);
+
+        // Only run interval when tab is visible
+        this.intervalId = setInterval(() => {
+            if (!document.hidden) {
+                this.update();
+            }
+        }, 1000);
+
+        // Handle tab visibility changes
+        document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));
     }
 
-    update() {
-        const now = new Date();
+    handleVisibilityChange() {
+        if (!document.hidden) {
+            this.update(); // Immediate update when tab becomes visible
+        }
+    }
+
+    getNextDiwaliDate(currentYear) {
+        // Get the next available Diwali date
+        let year = currentYear;
+        while (!this.diwaliDates[year]) {
+            year++;
+            // Prevent infinite loop
+            if (year > currentYear + 10) return null;
+        }
+        return this.diwaliDates[year].dhanteras;
+    }
+
+  update() {
+        // Use simulated date for testing or real current date
+        const now = this.simulatedDate || new Date(); // Simulate date for testing here Example: new Date(2025, 9, 20);
         const currentYear = now.getFullYear();
         const currentDates = this.diwaliDates[currentYear] || this.diwaliDates[2025];
 
         let currentFestival = null;
-        for (const [festival, date] of Object.entries(currentDates)) {
-            if (now >= date && now < currentDates.end) {
-                if (festival !== 'end') {
-                    currentFestival = festival;
-                }
+        
+        // Check each festival date
+        const festivals = Object.entries(currentDates);
+        for (let i = 0; i < festivals.length - 1; i++) {
+            const [festival, startDate] = festivals[i];
+            const endDate = festivals[i + 1][1];
+            
+            if (now >= startDate && now < endDate) {
+                currentFestival = festival;
                 break;
             }
         }
@@ -61,15 +108,20 @@ class DiwaliCountdown {
             this.showFestivalMessage(currentFestival);
             this.countdownContainer.classList.add('celebrating');
         } else {
-            const nextDiwali = new Date(currentYear + 1, 9, 20);
-            const diff = this.getTimeRemaining(nextDiwali);
-            this.updateCountdown(diff);
-            this.messageEl.textContent = "Counting down to Diwali...";
+            this.countdownContainer.classList.remove('celebrating');
+            const nextDiwali = this.getNextDiwaliDate(currentYear);
+            if (nextDiwali) {
+                const diff = this.getTimeRemaining(nextDiwali);
+                this.updateCountdown(diff);
+                this.messageEl.textContent = "✨ Counting down to the magical festival of Diwali... ✨";
+            } else {
+                this.messageEl.textContent = "Future Diwali dates not available";
+            }
         }
     }
 
     getTimeRemaining(endDate) {
-        const total = endDate.getTime() - new Date().getTime();
+        const total = endDate.getTime() - Date.now();
         const seconds = Math.floor((total / 1000) % 60);
         const minutes = Math.floor((total / 1000 / 60) % 60);
         const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
@@ -79,23 +131,49 @@ class DiwaliCountdown {
     }
 
     updateCountdown({ days, hours, minutes, seconds }) {
-        this.daysEl.textContent = days.toString().padStart(2, '0');
-        this.hoursEl.textContent = hours.toString().padStart(2, '0');
-        this.minutesEl.textContent = minutes.toString().padStart(2, '0');
-        this.secondsEl.textContent = seconds.toString().padStart(2, '0');
+        // Batch DOM updates
+        requestAnimationFrame(() => {
+            this.daysEl.textContent = days.toString().padStart(2, '0');
+            this.hoursEl.textContent = hours.toString().padStart(2, '0');
+            this.minutesEl.textContent = minutes.toString().padStart(2, '0');
+            this.secondsEl.textContent = seconds.toString().padStart(2, '0');
+        });
     }
 
     showFestivalMessage(festival) {
         if (this.messageEl.textContent !== this.festivalMessages[festival]) {
             this.messageEl.style.opacity = '0';
-            requestAnimationFrame(() => {
+            
+            // Cancel any existing animation frame
+            if (this.animationFrameId) {
+                cancelAnimationFrame(this.animationFrameId);
+            }
+
+            this.animationFrameId = requestAnimationFrame(() => {
                 this.messageEl.textContent = this.festivalMessages[festival];
                 this.messageEl.style.opacity = '1';
+                this.animationFrameId = null;
             });
         }
     }
+
+    // Cleanup method
+    destroy() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+        }
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+        }
+        document.removeEventListener('visibilitychange', this.handleVisibilityChange);
+    }
 }
 
+// Initialize with error handling
 document.addEventListener('DOMContentLoaded', () => {
-    new DiwaliCountdown();
+    try {
+        window.diwaliCountdown = new DiwaliCountdown();
+    } catch (error) {
+        console.error('Failed to initialize Diwali countdown:', error);
+    }
 });
