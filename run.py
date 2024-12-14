@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash, session, jsonify
 from pymongo import MongoClient
 from pathlib import Path
+from urllib.parse import unquote
 from werkzeug.security import generate_password_hash, check_password_hash
 
 if os.path.exists("env.py"):
@@ -41,11 +42,19 @@ def map():
 
 @app.route('/state/<state_name>')
 def state_details(state_name):
+    # Handle URL decoding and special characters
+    state_name = unquote(state_name).replace("-", " ").strip().lower()
+    
+    # Debug statement to see what the normalized state name looks like
+    print(f"Searching for state: {state_name}")
+    
     state = states_collection.find_one({"state": state_name}, {"_id": 0}) if states_collection is not None else None
+    
     if state:
         return render_template("state_details.html", state=state)
     else:
         return render_template("404.html"), 404
+
 
 
 @app.route('/quiz')

@@ -56,185 +56,163 @@ window.onclick = function (event) {
 const question = [
   {
       ques: "What is Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "A Hindu festival of lights", result: true },
           { ans: "A festival celebrated in Antarctica", result: false },
           { ans: "A New Year celebration in China", result: false },
           { ans: "A Buddhist festival in Japan", result: false }
-      ]
+      ])
   },
   {
       ques: "When is Diwali celebrated?",
-      answers: [
+      answers: shuffle([
           { ans: "During the Hindu month of Kartika", result: true },
           { ans: "During Christmas Eve", result: false },
           { ans: "In July", result: false },
           { ans: "On New Year's Day", result: false }
-      ]
+      ])
   },
   {
       ques: "Why is Diwali called the 'Festival of Lights'?",
-      answers: [
+      answers: shuffle([
           { ans: "Because people light diyas and burst firecrackers", result: true },
           { ans: "Because it rains diamonds", result: false },
           { ans: "Because it marks the beginning of spring", result: false },
           { ans: "Because it symbolizes the changing of seasons", result: false }
-      ]
+      ])
   },
   {
       ques: "What is the significance of diyas in Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "They symbolize purity, goodness, and enlightenment", result: true },
           { ans: "They represent the stars in the sky", result: false },
           { ans: "They are a signal for fishermen", result: false },
           { ans: "They symbolize wealth and prosperity", result: false }
-      ]
+      ])
   },
   {
       ques: "How long does Diwali last?",
-      answers: [
+      answers: shuffle([
           { ans: "Five days", result: true },
           { ans: "One day", result: false },
           { ans: "Seven days", result: false },
           { ans: "A month", result: false }
-      ]
+      ])
   },
   {
       ques: "Which deity is worshipped on Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "Goddess Lakshmi", result: true },
           { ans: "Lord Shiva", result: false },
           { ans: "Lord Hanuman", result: false },
           { ans: "Lord Ganesha", result: false }
-      ]
+      ])
   },
   {
       ques: "What are the five days of Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "Dhanteras, Naraka Chaturdashi, Lakshmi Puja, Govardhan Puja, Bhai Dooj", result: true },
           { ans: "New Year's Eve, New Year, Pongal, Holi, Easter", result: false },
           { ans: "Navratri, Pongal, Dussehra, Christmas, Holi", result: false },
           { ans: "Monday, Tuesday, Wednesday, Thursday, Friday", result: false }
-      ]
+      ])
   },
   {
       ques: "What is the historical story behind Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "Lord Rama's return to Ayodhya after defeating Ravana", result: true },
           { ans: "The discovery of America", result: false },
           { ans: "The invention of the light bulb", result: false },
           { ans: "The creation of the first rocket", result: false }
-      ]
+      ])
   },
   {
       ques: "Why is Diwali called 'Bandi Chhor Divas' in Punjab?",
-      answers: [
+      answers: shuffle([
           { ans: "It marks the release of Guru Hargobind Sahib from Mughal imprisonment", result: true },
           { ans: "It celebrates the defeat of the British in Punjab", result: false },
           { ans: "It is a harvest festival", result: false },
           { ans: "It marks the founding of the Sikh religion", result: false }
-      ]
+      ])
   },
   {
       ques: "What is the significance of Dhanteras?",
-      answers: [
+      answers: shuffle([
           { ans: "It is a day to buy gold, silver, or utensils for prosperity", result: true },
           { ans: "It is the day of Raksha Bandhan", result: false },
           { ans: "It is a day to visit temples", result: false },
           { ans: "It is a festival celebrated with colors", result: false }
-      ]
+      ])
   },
   {
       ques: "What does Naraka Chaturdashi signify?",
-      answers: [
+      answers: shuffle([
           { ans: "Lord Krishna's victory over the demon Narakasura", result: true },
           { ans: "The start of the monsoon season", result: false },
           { ans: "The beginning of spring", result: false },
           { ans: "The discovery of electricity", result: false }
-      ]
+      ])
   },
   {
       ques: "What is Bhai Dooj?",
-      answers: [
+      answers: shuffle([
           { ans: "A day celebrating the bond between brothers and sisters", result: true },
           { ans: "The day of the first snowfall", result: false },
           { ans: "A celebration of friendship", result: false },
           { ans: "A festival marking the first day of the year", result: false }
-      ]
+      ])
   },
   {
       ques: "Why is Lakshmi Puja important during Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "Lakshmi blesses homes with wealth and prosperity", result: true },
           { ans: "It celebrates the birth of Lord Krishna", result: false },
           { ans: "It marks the beginning of harvest season", result: false },
           { ans: "It is celebrated as New Year in some states", result: false }
-      ]
+      ])
   },
   {
       ques: "What are rangolis, and why are they made during Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "Colorful designs made to welcome Goddess Lakshmi", result: true },
           { ans: "Decorations made for school festivals", result: false },
           { ans: "Artworks displayed in museums", result: false },
           { ans: "Doodles drawn by children", result: false }
-      ]
+      ])
   },
   {
       ques: "Why are firecrackers burst on Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "To symbolize the triumph of light over darkness", result: true },
           { ans: "To create noise pollution", result: false },
           { ans: "To generate electricity", result: false },
           { ans: "To scare away birds", result: false }
-      ]
-  },
-  {
-      ques: "What is the significance of cleaning homes before Diwali?",
-      answers: [
-          { ans: "It is believed to attract Goddess Lakshmi's blessings", result: true },
-          { ans: "To welcome Santa Claus", result: false },
-          { ans: "To prepare for the summer festival", result: false },
-          { ans: "To clear the air of pollutants", result: false }
-      ]
+      ])
   },
   {
       ques: "Which state celebrates the brightest Diwali?",
-      answers: [
+      answers: shuffle([
           { ans: "Uttar Pradesh, especially Ayodhya", result: true },
           { ans: "Himachal Pradesh", result: false },
           { ans: "Sikkim", result: false },
           { ans: "Goa", result: false }
-      ]
-  },
-  {
-      ques: "What is Bhau Beej, and how is it celebrated in Maharashtra?",
-      answers: [
-          { ans: "A celebration of the bond between brothers and sisters", result: true },
-          { ans: "A harvest festival", result: false },
-          { ans: "A religious pilgrimage", result: false },
-          { ans: "A celebration of Lord Krishna's birth", result: false }
-      ]
-  },
-  {
-      ques: "What delicacies are prepared during Diwali in Rajasthan?",
-      answers: [
-          { ans: "Ghewar, Moong Dal Halwa, and Badaam Katli", result: true },
-          { ans: "Idli, Dosa, and Vada", result: false },
-          { ans: "Rasgulla, Shondesh, and Mishti Doi", result: false },
-          { ans: "Pizza, Burgers, and Fries", result: false }
-      ]
-  },
-  {
-      ques: "Which Diwali sweets are famous in West Bengal?",
-      answers: [
-          { ans: "Rasgulla, Mishti Doi, and Shondesh", result: true },
-          { ans: "Jalebi, Samosa, and Pani Puri", result: false },
-          { ans: "Dhokla, Khandvi, and Thepla", result: false },
-          { ans: "Cupcakes, Donuts, and Cookies", result: false }
-      ]
+      ])
   }
 ];
+
+/**
+* Shuffles an array for different answers each time.
+* @param {Array} array - The array to be shuffled.
+* @returns {Array} The shuffled array.
+*/
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+  return array;
+}
+
 
 const questions = document.getElementById("question");
 const answerButtons = document.getElementsByClassName("ans");
