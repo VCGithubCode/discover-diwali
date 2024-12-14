@@ -1,20 +1,68 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h2>Leaderboard</h2>
-<table>
-    <tr>
-        <th>Rank</th>
-        <th>Username</th>
-        <th>Score</th>
-    </tr>
-    {% for user in users %}
-    <tr>
-        <td>{{ loop.index }}</td>
-        <td>{{ user.username }}</td>
-        <td>{{ user.score }}</td>
-    </tr>
-    {% endfor %}
-</table>
-
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="mb-4" style="font-family: 'Lora', serif; color: #FF6347;">🏆 Leaderboard 🏆</h2>
+    </div>
+    <table class="table table-hover table-striped table-bordered text-center" style="background-color: #FFEBCD;">
+        <thead class="table-dark">
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Score</th>
+                <th>Last Score Date</th>
+                <th>Badge</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td style="font-weight: bold; font-size: 1.5em;">
+                    {% if loop.index == 1 %}
+                    <i class="fas fa-crown" style="color: gold;"></i>
+                    {% elif loop.index == 2 %}
+                    <i class="fas fa-star" style="color: silver;"></i>
+                    {% elif loop.index == 3 %}
+                    <i class="fas fa-medal" style="color: bronze;"></i>
+                    {% else %}
+                    <i class="fas fa-hashtag"></i> {{ loop.index }}
+                    {% endif %}
+                </td>
+                <td style="color: #8B0000; font-family: 'Open Sans', sans-serif;">
+                    <i class="fas fa-user"></i> {{ user.username | capitalize }}
+                </td>
+                <td style="font-size: 1.2em;">
+                    <i class="fas fa-star"></i> {{ user.score }}
+                </td>
+                <td style="font-size: 0.9em;">
+                    {% if user.last_score_date %}
+                    <i class="fas fa-calendar-alt"></i> {{ user.last_score_date.strftime("%Y-%m-%d %H:%M:%S") }}
+                    {% else %}
+                    N/A
+                    {% endif %}
+                </td>
+                <td>
+                    {% if loop.index == 1 %}
+                    <i class="fas fa-award" style="color: gold;"></i>
+                    {% elif loop.index == 2 %}
+                    <i class="fas fa-ribbon" style="color: silver;"></i>
+                    {% elif loop.index == 3 %}
+                    <i class="fas fa-trophy" style="color: bronze;"></i>
+                    {% else %}
+                    <i class="fas fa-gem" style="color: #FFD700;"></i>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center mt-4">
+        <p style="font-family: 'Open Sans', sans-serif; font-size: 1.2em; color: #4682B4;">
+            🎉 Keep playing to secure your spot on the leaderboard! 🎉
+        </p>
+        <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg mt-3">
+            <i class="fas fa-play-circle"></i> Play Again
+        </a>
+    </div>
+</div>
 {% endblock %}
