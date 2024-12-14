@@ -42,19 +42,12 @@ def map():
 
 @app.route('/state/<state_name>')
 def state_details(state_name):
-    # Handle URL decoding and special characters
-    state_name = unquote(state_name).replace("-", " ").strip().lower()
-    
-    # Debug statement to see what the normalized state name looks like
-    print(f"Searching for state: {state_name}")
-    
-    state = states_collection.find_one({"state": state_name}, {"_id": 0}) if states_collection is not None else None
-    
+    decoded_name = unquote(state_name)
+    state = states_collection.find_one({"state": decoded_name}, {"_id": 0}) if states_collection is not None else None
     if state:
         return render_template("state_details.html", state=state)
     else:
         return render_template("404.html"), 404
-
 
 
 @app.route('/quiz')
