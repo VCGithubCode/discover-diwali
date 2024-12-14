@@ -174,11 +174,14 @@
     </a>
 
     <!-- Main Content-->
-    <div class="container px-4 px-lg-5 theme-switch" data-bs-theme="contrast">
+    <div class="stage" id="star-stage"></div>
+    <div class="main-container mt-5">
+      <div class="container px-4 px-lg-5 theme-switch main" data-bs-theme="contrast">
 
         {% block content %}
         {% endblock %}
 
+      </div>
     </div>
     <!-- Footer-->
     <footer>
@@ -211,7 +214,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; Diwali Discovery 2024</div>
+                    <div class="small text-center fst-italic footer-text">Copyright &copy; Diwali Discovery 2024</div>
                 </div>
             </div>
         </div>
@@ -228,6 +231,8 @@
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     <!-- Quiz JS-->
     <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+    <!-- Stars JS-->
+    <script src="{{ url_for('static', filename='js/stars.js') }}"></script>
 
 
 </body>
