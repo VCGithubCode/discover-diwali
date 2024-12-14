@@ -35,17 +35,27 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('index') }}">Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('map') }}">Map</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('quiz') }}">Quiz</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="{{ url_for('about') }}">About</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><button class="btn btn-secondary mt-2" type="button" data-bs-toggle="offcanvas"
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('index') }}">Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('map') }}">Map</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('quiz') }}">Quiz</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                                href="{{ url_for('about') }}">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                                href="{{ url_for('contact') }}">Contact</a></li>
+                    {% if session.get('logged_in') %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('logout') }}">Logout</a></li>
+                        <li class="nav-item">
+                            <span class="nav-link px-lg-3 py-3 py-lg-4">Welcome, {{ session.get('username') }}!</span>
+                        </li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('register') }}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('login') }}">Login</a></li>
+                    {% endif %}                        
+                        <li><button class="btn btn-secondary mt-2" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
                                 class="fas fa-universal-access"></i> Accessibility</button></li>
                 </ul>
