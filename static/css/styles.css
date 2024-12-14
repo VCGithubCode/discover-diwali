@@ -54,7 +54,7 @@
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-color-rgb: 33, 37, 41; 
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -11428,6 +11428,10 @@ p.ans {
 /* -------- Style the countdown timer and holiday messages --------*/
 .countdown-container {
   max-width: 800px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 5px;
+  box-shadow: -1px -1px 5px var(--bs-white), -1px -1px 1px var(--bs-white), 1px 1px 5px var(--bs-black), 1px 1px 1px var(--bs-black);
   margin: 0 auto;
 }
 
@@ -11483,10 +11487,11 @@ p.ans {
 
 .festival-message {
   font-size: 1.2rem;
-  padding: 1rem;
   border-radius: 10px;
-  background: linear-gradient(145deg, #FFD700, #FFA500);
-  color: #000;
+  background-color: var(--purple);
+  box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
+    inset 5px 5px 9px rgba(0, 0, 0, 0.9);
+  color: #fff;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -11536,9 +11541,9 @@ p.ans {
   100% { scale: 1; }
 }
 
-.celebrating .countdown-box {
+/* .celebrating .countdown-box { COUNTODOWN ANIMATION
   animation: celebrate 2s infinite;
-}
+} */
 /* error page styles - yet to finish styling */
 
 #error-img {
