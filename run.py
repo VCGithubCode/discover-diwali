@@ -22,7 +22,7 @@ try:
     client = MongoClient(MONGO_URI)
     db = client["diwali-discovery"]
     states_collection = db["states"]
-    users_collection = db["users"]  # New collection for users
+    users_collection = db["users"]
 except Exception as e:
     print(f"Error connecting to MongoDB: {e}")
     states_collection = None  # Prevent the app from crashing if MongoDB fails
