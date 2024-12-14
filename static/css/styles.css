@@ -3609,6 +3609,31 @@ ul.list-unstyled.p-3 {
   }
 }
 
+.light-image, .light-image-front {
+  width: 15rem; 
+  position: fixed;
+  top: -8px;
+  left: 16%; 
+  transform: translateX(-50%); 
+  z-index: 1031;
+}
+
+.light-image-middel {
+  width: 9rem; 
+  left: 90%; 
+  filter: blur(0.5px);
+  -webkit-filter: blur(0.5px);
+  z-index: 100;
+}
+
+.light-image-back {
+  width: 5rem; 
+  left: 48%; 
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  z-index: -1;
+}
+
 .nav {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
