@@ -35,7 +35,7 @@ def map():
 @app.route('/state/<state_name>')
 def state_details(state_name):
     # Fetch state details from the MongoDB collection
-    state = states_collection.find_one({"state": state_name}, {"_id": 0}) if states_collection else None
+    state = states_collection.find_one({"state": state_name}, {"_id": 0}) if states_collection is not None else None
     
     if state:
         return render_template("state_details.html", state=state)
