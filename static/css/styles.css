@@ -148,7 +148,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-image: linear-gradient(to bottom right, var(--purple) 60%, var(--blue));
+  background-image: linear-gradient(to bottom right, var(--purple) 40%, var(--blue) 60%);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -10724,13 +10724,15 @@ blockquote {
     color: #fff;
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: #E5C366;
+    text-shadow: 2px 2px 2px #000;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link {
     color: #fff;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: #E5C366;
+    text-shadow: 2px 2px 2px #000;
   }
 }
 @media (min-width: 992px) {
@@ -10746,30 +10748,64 @@ blockquote {
     position: fixed;
     top: -83px;
     transition: transform 0.2s;
-    border-bottom: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 1px #0e2f50;
+    background-color: var(--blue);
   }
   #mainNav.is-fixed .navbar-brand {
-    color: #212529;
+    color: #fff;
   }
   #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-    color: #0085A1;
+    color: #E5C366;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a {
-    color: #212529;
+    color: #fff;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-    color: #0085A1;
+    color: #E5C366;
   }
   #mainNav.is-visible {
     /* if the user changes the scrolling direction, we show the header */
     transform: translate3d(0, 100%, 0);
   }
+
+  #mainNav.is-visible button.btn {
+    background-color: #153184;
+    box-shadow: 2px 2px 4px #0a1840, -2px -2px 4px #267dd6;
+    border-color: transparent;
+    color: #FFF;
+    font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+    font-size: small;
+  }
+  
+  #mainNav.is-visible button.btn:hover {
+    background-color: #153184;
+    box-shadow: inset 4px 4px 5px #0a1840, inset -4px -4px 5px #204ac8;
+    border-color: transparent;
+    color: #e0e0e0;
+    font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+    font-size: small;
+  }
 }
 
 footer {
+  background-color: var(--purple);
+  border-top: 4px solid #b57ad5;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.social-tags {
+  color: #E5C366;
+  text-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #b57ad5;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+.social-tags:hover {
+  text-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
+  color: #292929;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  font-size: small;
 }
 
 header.masthead {
@@ -11167,11 +11203,23 @@ div#instructions.modal {
   letter-spacing: .05em;
   overflow: auto;
 }
+
 button.btn {
-  color: #66CCCC;
+  background-color: #E5C366;
+  box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #b57ad5;
+  color: #000;
   font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
   font-size: small;
 }
+
+button.btn:hover {
+  background-color: #E5C366;
+  box-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
+  color: #292929;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
 span.close {
   color: #ffffff !important;
   float: right;
