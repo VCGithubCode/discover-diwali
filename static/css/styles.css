@@ -11,6 +11,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --purple: #5B2678;
+  --blue: #1A5693;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -146,7 +148,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-image: linear-gradient(to bottom right, var(--purple) 60%, var(--blue));
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -10751,10 +10753,11 @@ header.masthead {
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
 /* Photo by Balaji J: https://www.pexels.com/photo/lighted-candles-on-flowers-11661801/ */
-  background-image: url('/static/img/festival-of-lights.jpg');
+  background-image: url('/static/img/patern.jpg');
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #6c757d;
+  /* background-color: #6c757d; */
+  box-shadow: 0 10px 50px #000;
   background-size: cover;
   background-attachment: scroll;
 }
@@ -10766,7 +10769,7 @@ header.masthead:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #212529;
+  /* background-color: #212529; */
   opacity: 0.5;
 }
 header.masthead .page-heading,
@@ -11431,19 +11434,40 @@ p.ans {
 .countdown-boxes {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
+.countdown-item {
+  position: relative;
+}
+
+.countdown-image {
+  width: 105.5px; 
+  position: absolute;
+  top: -3px;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 1;
+}
+
+.chain {
+  width: 108px;
+  top: -6px;
+}
+
 .countdown-box {
-  background: linear-gradient(145deg, #FF9933, #FF4D00);
-  border-radius: 10px;
-  padding: 1rem;
   min-width: 100px;
-  color: white;
+  position: relative;
+  /* background: linear-gradient(145deg, #024899, #FAC845); */
+  background-color: var(--bs-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.6), 0px 0px 10px rgba(255, 255, 255, 0.45);
+  color: var(--bs-black);
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  padding: 1rem;
+  z-index: 0;
 }
 
 .countdown-number {
