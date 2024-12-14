@@ -4,5 +4,10 @@
 	<div id="error-img">
 		<img src="/static/img/error-image.jpg" alt="page not found">
 	</div>
-	<p>Whoops! Page Not Found! Lets get you back to the festivities</p>
+	<div class="error-message">
+		<p>Whoops! Page Not Found! Lets get you back to the festivities</p>
+	</div>
+	<div class="error-message">
+		<button id="error-button"><a href="{{ url_for('index') }}">Home Page</a></button>
+	</div>
 {% endblock %}
