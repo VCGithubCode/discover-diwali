@@ -5,9 +5,9 @@ Please do not use it for course project work.
 ---
 ## **🎄 Hack the Holidays: Submission Details**
 ### **Deployment**
-(Please note: Your team must also include the deployed links in the usual submission in Hackapp.)  
+ 
 The project is deployed and can be accessed at:  
-**http://your-deployed-link.com**
+ [Diwali Discovery](https://diwali-discovery.vercel.app)
 ---
 ### **Criteria**
 In this section, we will briefly discuss how our team addressed the applicable criteria:
@@ -16,40 +16,29 @@ In this section, we will briefly discuss how our team addressed the applicable c
 - 🎁 **The project has a basic README that follows the provided template.**
 - 🎁 **The project has an overall sense of completeness.**
 - 🎁 **The project showcases a strong sense of creativity and originality.**
----
+
 ## **🎅 About the Submission**
 ### **Intro**
-One or two paragraphs providing an overview of our project.  
-This could include how our project embodies the **Hack the Holidays** spirit and what makes it unique.
----
+
+Our project, Discover Diwali, embraces the spirit of **Hack the Holidays**  by bringing the celebration of Diwali to life through an interactive, engaging, and educational experience. By combining technology with cultural storytelling, we have created a platform that allows users to explore the rich traditions, stories, and regional delicacies of Diwali across India. Through an interactive map, users can click on different states to discover unique Diwali customs, watch short videos, and take quizzes that test their knowledge of the festival’s cultural significance. The use of a progress tracker and customizable avatars adds a fun, gamified element, making learning about Diwali both informative and entertaining. 
+
+What makes Discover Diwali unique is its focus on personalization and accessibility, ensuring that users can explore the diversity of Diwali celebrations in an immersive and user-friendly manner. By incorporating features like a global leaderboard, custom avatars, and a quiz to unlock after completing the state-specific stories, our project creates a dynamic and engaging environment for all ages. Whether you're familiar with Diwali or just discovering it, Discover Diwali offers a fun, inclusive way to learn about one of the most vibrant festivals in the world.
 
 
 ### **Goal**
+
 The **Goal** section provides a concise summary of the main objective or purpose of the project described in this README. It addresses the following aspects:
-- 🎄 **Problem Statement:** A brief description of the holiday-related issue or gap our project aims to address.
-- 🎄 **Objective(s):** What does our project set out to achieve?
-- 🎄 **Target Audience:** Who will benefit from this project?
-- 🎄 **Benefits:** How will this project make the holidays brighter, more inclusive, or more joyful?
----
-## **💻 Tech Stack**
-In the **Tech** section, we provide information about the technology stack, dependencies, and any technical details related to the project.  
-For example:
-- Frontend: HTML, CSS, JavaScript
-- Backend: Python, Flask
-- Database: PostgreSQL
-- Version Control: Git & GitHub
-- Deployment: [Insert Deployment Platform, e.g., Heroku, Netlify, etc.]
----
-## **🌟 Credits**
-In the **Credits** section, we acknowledge the resources, tools, or inspirations used in this project, such as:
-- Any tutorials or articles referenced
-- Any open-source libraries or frameworks
-- Any special mentions for contributors, teammates, or mentors
-#### Jonathan Dussot
-#### Vernell Clark
-#### Mia Rasmussen
-#### Ashraf Bocktor
----
+
+- 🎄 **Problem Statement:** Many people around the world are unfamiliar with the diversity and cultural significance of Diwali. While this festival is widely celebrated in India, its traditions, regional variations, and stories are often unknown outside of those who celebrate it. There is a gap in making this cultural celebration more accessible and engaging for people of all backgrounds.
+
+- 🎄 **Objective(s):** Our project, Discover Diwali, aims to bridge this gap by creating an interactive and educational platform where users can explore the traditions, stories, and regional customs of Diwali. Through an engaging map, quizzes, and videos, we aim to provide an immersive experience that teaches people about Diwali’s cultural importance and allows them to learn in a fun, gamified manner.
+
+- 🎄 **Target Audience:** Our target audience includes people of all ages, from children to adults, who are curious about Diwali, its customs, and its cultural significance. Whether someone is already familiar with Diwali or learning about it for the first time, Discover Diwali caters to anyone interested in learning more about this vibrant festival. The project is particularly beneficial for educators, students, and families who want to introduce their children to the festival.
+
+- 🎄 **Benefits:** Discover Diwali brings the holiday season to life by creating an inclusive and educational space where users can explore the festival's rich traditions, regiona
+
+
+
 # Project Overview 
 
 "Diwali Discovery" is an interactive educational app where kids explore an interactive map of India and learn how Diwali is celebrated in different Indian states. Each state reveals a short video or story write-up about the unique way Diwali is celebrated in that region. Kids can also click on a "Lessons Learned" link for each state, which takes them to a summary of the key cultural and historical insights for that region. As kids complete the exploration for each state, they earn progress points, and a progress bar shows how much they have explored. Once all states are explored, kids unlock a Diwali Quiz, which tests their knowledge. Completing the quiz places them on a global leaderboard, encouraging competition and learning.
@@ -64,9 +53,8 @@ In the **Credits** section, we acknowledge the resources, tools, or inspirations
 * [Project Overview](#project-overview)
 * [Criteria](#criteria)
 * [Website Structure](#website-structure)
-  * [Landing Page](#landing-page)
+  * [Interactive Map](#interactive-map)
   * [Features](#features)
-* [Wireframes](#wireframes)
 * [Development Process](#development-process)
   * [Agile Methodology](#agile-methodology)
   * [Collaboration Tools](#collaboration-tools)
@@ -77,8 +65,41 @@ In the **Credits** section, we acknowledge the resources, tools, or inspirations
 * [Team](#team)
 * [Acknowledgement](#acknowledgement)
 # Website Structure
+### **App Screens**
+
+1. **Home Screen**
+   - Welcome message to greet users.
+   - "Start Discovery" button to begin exploring Diwali celebrations.
+   - A link to the **Leaderboard** to view quiz rankings.
+
+2. **Map Screen**
+   - Interactive map of India.
+   - Click on states to open the video or story page related to that state's Diwali celebration.
+
+3. **State Screen**
+   - Displays a short video or written story about Diwali traditions in that state.
+   - A **"Lessons Learned"** button that takes kids to a page with key insights about the state's Diwali celebration.
+
+4. **Quiz Screen (Unlockable)**
+   - Quiz becomes available after all state stories are viewed.
+   - Users can test their knowledge of Diwali customs, traditions, and stories from the states they've explored.
+
+5. **Leaderboard Screen**
+   - View rankings based on quiz scores.
+   - See how you compare with other users in terms of knowledge about Diwali.
+
 *<span style="color: blue;">[Back to Content](#content)</span>*
-## Landing Page
+## Interactive Map
+**Interactive Map of India (Main Feature)**
+
+
+- A clickable map of India where each state is a clickable region.
+- Each state opens a mini-story or a short video about the regional Diwali celebration.
+- Each time a state is "completed," it is marked as "Completed" with a checkmark or color change.
+- A **Progress Bar** at the bottom shows the user's overall progress.
+- **Quiz Unlock Logic**: The quiz only becomes available when all states are "completed."
+
+
 *<span style="color: blue;">[Back to Content](#content)</span>*
 ## Features
 1. **Interactive Map of India** – Click on states to learn about their unique Diwali celebrations.  
@@ -90,10 +111,7 @@ In the **Credits** section, we acknowledge the resources, tools, or inspirations
 7. **Custom Avatars** – Kids can create an avatar to represent them on the leaderboard.  
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
-# Wireframes
-*<span style="color: blue;">[Back to Content](#content)</span>*
 #  **💻Development Process**
-*<span style="color: blue;">[Back to Content](#content)</span>*
 ## Agile Methodology
 ## Sprint Process and Team Workflow
 At the beginning of each sprint, our team conducts Sprint Planning to set the course for the upcoming work. This process includes:
@@ -128,17 +146,35 @@ The Team used slack team channel Canvas to ensure everyone stayed updated on pro
 ## Technologies Used
 - Frontend: HTML, CSS, JavaScript
 - Backend: Python, Flask
-- Database: PostgreSQL
+- Database: MongoDB
 - Version Control: Git & GitHub
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 ## Validation
+For HTML, the following validator was used: [W3C Validator](https://validator.w3.org/nu/)
+
+For CSS, the following validator was used: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+For JavaScript, the following validator was used: [JSHint](https://jshint.com/).
+
+For Python, the following validator was used: [PEP8CI](https://pep8ci.herokuapp.com/).
+
+
+
+
 *<span style="color: blue;">[Back to Content](#content)</span>*
 # Future Adding
 *<span style="color: blue;">[Back to Content](#content)</span>*
 # Deployment
+Vercel was used for deployment. Please visit the [Diwali Discovery](https://diwali-discovery.vercel.app) website.
+
+
+
 *<span style="color: blue;">[Back to Content](#content)</span>*
 # Team
+Here is the hackathon team page: [Hackathon Team](https://hackathon.codeinstitute.net/teams/493/)
+
+
 ## Vernell Clark — SCRUM Lead
 - Vernell ensures our team remains on track and focused. As our SCRUM Lead, he coordinate team efforts, facilitate meetings, and help resolve any obstacles. Vernell expertise in agile methodologies has been key to our project's timely and organized progress.
 ### Role: Project Management & Coordination
