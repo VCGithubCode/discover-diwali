@@ -31,6 +31,40 @@ except Exception as e:
     states_collection = None  # Prevent the app from crashing if MongoDB fails
     users_collection = None
 
+AVATARS = [
+    "avatar1.jpg", "avatar2.jpg", "avatar3.jpg", "avatar4.jpg", "avatar5.jpg", "avatar6.jpg", "avatar7.jpg", "avatar8.jpg", "avatar9.jpg", "avatar10.jpg", "avatar11.jpg", "avatar12.jpg", "avatar13.jpg", "avatar14.jpg", "avatar15.jpg"
+]
+STATES = [
+    "Punjab", "Rajastan", "Uttar Pradesh", "Gujarat", "Maharashtra", "Karnataka", "Kerala", "Tamil Nadu", "West Bengal"
+]
+
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    if "visited_states" not in session:
+        session["visited_states"] = []
+
+    if request.method == "POST":
+        # Save the selected avatar in the session
+        selected_avatar = request.form.get("avatar")
+        if selected_avatar:
+            session["avatar"] = selected_avatar
+
+        return redirect(url_for("profile"))
+
+    # Calculate progress
+    total_states = len(STATES)
+    visited_states = len(session["visited_states"])
+    remaining_states = total_states - visited_states
+
+    return render_template(
+        "profile.html",
+        avatars=AVATARS,
+        selected_avatar=session.get("avatar", ""),
+        visited_states=visited_states,
+        remaining_states=remaining_states,
+        total_states=total_states,
+    )
+
 
 @app.route('/')
 def index():
