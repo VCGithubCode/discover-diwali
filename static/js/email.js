@@ -7,7 +7,7 @@ function sendMail(contactForm){
             }).then(
                 (response) => {
                     console.log("SUCCESS", response);
-                    window.location.href = "thank-you.html"; 
+                    window.location.href = "thank-you"; 
                 },
                 (error) => {
                     console.log("FAILED", error);
