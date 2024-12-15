@@ -1,13 +1,20 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h2>Register</h2>
-<form action="{{ url_for('register') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    <button type="submit">Register</button>
-</form>
+
+<div class="container-fluid registration-container">
+    <div class="d-flex justify-content-center align-items-center registration p-3">
+        <img src="/static/img/chain.jpg" alt="Chain Image" class="countdown-image registration-img">
+        <div>
+            <h2 class="text-center mt-5 mb-5">Register</h2>
+            <form class="d-flex flex-column pb-5" action="{{ url_for('register') }}" method="post">
+                <label for="username">Username:</label>
+                <input class="mb-3" type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button class="mt-5 btn registration-btn" type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
