@@ -10,10 +10,10 @@ class DiwaliCountdown {
             return acc;
         }, {});
 
-        this.daysEl = elements['days'];
-        this.hoursEl = elements['hours'];
-        this.minutesEl = elements['minutes'];
-        this.secondsEl = elements['seconds'];
+        this.daysEl = elements.days;
+        this.hoursEl = elements.hours;
+        this.minutesEl = elements.minutes;
+        this.secondsEl = elements.seconds;
         this.messageEl = elements['festival-message'];
         this.countdownContainer = document.querySelector('.countdown-container');
 
