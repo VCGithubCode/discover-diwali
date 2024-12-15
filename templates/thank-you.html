@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-	<h1>Welcome to Diwali Discovery's Thank You Page</h1>
-	<p>Thank you for your feedback!</p>
+	<div class="thankyou-container mt-4">
+		<h1 class="thankyou-header">Thank you Diwali enthusiast!!</h1>
+	</div>
+	<div class="thankyou-container">
+		<p class="email-success">Your email has been successfully sent!</p>
+		<br>
+		<p class="email-reponse">One of our staff will reply to your enquiry within the following 24 business hours.</p>
+	</div>
+	<div class="error-message">
+		<button id="error-button"><a href="{{ url_for('index') }}">Home Page</a></button>
+	</div>
 {% endblock %}

@@ -1893,6 +1893,7 @@ svg {
   box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #b57ad5;
   color: #000;
   font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  border-radius: 10px;
   padding: 5px 15px;
   margin-bottom: 25px;
   text-align: center;
@@ -1934,6 +1935,31 @@ svg {
 .form-text {
   font-size: large !important;
   color: var(--bs-gray-400) !important;
+}
+
+/* thank you Page */
+
+.thankyou-container {
+  margin: 25px auto;
+  padding: 20px;
+  max-width: 600px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #b57ad5;
+}
+
+.thankyou-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.email-success {
+  font-size: 1.8rem;
+}
+
+.email-response {
+  font-size: 1.3rem;
 }
 
 /*--------------- STYLE MAP ZOOM -------------*/
