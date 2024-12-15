@@ -1586,7 +1586,7 @@ svg {
 .map-wrapper svg path {
   fill: #419F76;
   stroke: #000;
-  stroke-width: 1;
+  stroke-width: 0.5;
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
@@ -1597,6 +1597,10 @@ svg {
 
 .map-wrapper svg path.interactive:hover {
   fill: #FF5A31; 
+}
+
+.map-wrapper svg path.interactive:focus {
+  outline: none;
 }
 
 /* Styles for disabled paths */
