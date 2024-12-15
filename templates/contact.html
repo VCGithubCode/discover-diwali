@@ -20,7 +20,9 @@
 		  <div class="mb-2">
 			<label for="email" class="contactlabel form-label">Your email</label>
 			<input type="email" name="email" id="email" class="form-control" required>
-			<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
+			<div id="emailHelp" class="form-text">
+				Please provide the email you would like us to send the response to.
+			</div><br>
 		  </div>
   
 		  <div class="mb-3">
@@ -36,8 +38,14 @@
 		  </div>
   
 		  <div class="mb-2">
-			<input id="submit-button" class="btn btn-primary" type="submit" value="Submit Message"
-			  aria-label="clicking submit will redirect to another page">
+			<input 
+			  id="submit-button"
+			  class="btn btn-primary"
+			  type="submit"
+			  value="Submit Message"
+			  href="{{ url_for('index') }}"
+			  aria-label="clicking submit will redirect to another page"
+			>
 		  </div>
 		</form>
 	  </section>
