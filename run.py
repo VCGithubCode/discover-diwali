@@ -81,9 +81,8 @@ def page_not_found(error):
 
 
 @app.errorhandler(500)
-def error500():
-    return render_template("500.html")
-
+def server_error(error):
+    return render_template('500.html'), 500
 
 # Endpoint to fetch states data
 @app.route("/api/states", methods=["GET"])
