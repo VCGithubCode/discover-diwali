@@ -58,21 +58,26 @@ def profile():
 
         return redirect(url_for("profile"))
 
-    # Fetch user data, including selected avatar
+    # Fetch user data, including selected avatar and visited states
     user = users_collection.find_one({"username": username})
     selected_avatar = user.get("avatar", "")
-    total_states = len(STATES)
-    visited_states = len(session.get("visited_states", []))
-    remaining_states = total_states - visited_states
+
+    # Get the user's visited states from the user's document
+    visited_states = user.get("visited_states", [])
+    total_states = len(STATES)  # Total available states in the system
+    visited_states_count = len(visited_states)  # Count of states visited by the user
+    remaining_states = total_states - visited_states_count  # Calculate remaining states
 
     return render_template(
         "profile.html",
         avatars=AVATARS,
         selected_avatar=selected_avatar,
-        visited_states=visited_states,
+        visited_states=visited_states_count,
         remaining_states=remaining_states,
         total_states=total_states,
+        visited_states_list=visited_states  # Pass the full list of visited states
     )
+
 
 
 
@@ -88,12 +93,22 @@ def map():
 
 @app.route('/state/<state_name>')
 def state_details(state_name):
-    decoded_name = unquote(state_name)
-    state = states_collection.find_one({"state": decoded_name}, {"_id": 0}) if states_collection is not None else None
-    if state:
-        return render_template("state_details.html", state=state)
+    if "user" in session:
+        decoded_name = unquote(state_name)
+        state = states_collection.find_one({"state": decoded_name}, {"_id": 0})
+        
+        if state:
+            # Update visited states for the logged-in user
+            users_collection.update_one(
+                {"username": session["user"]}, 
+                {"$addToSet": {"visited_states": decoded_name}}  # Add the state to visited_states array
+            )
+            return render_template("state_details.html", state=state)
+        else:
+            return render_template("404.html"), 404
     else:
-        return render_template("404.html"), 404
+        flash("Please log in to view state details.", "error")
+        return redirect(url_for("login"))
 
 
 @app.route('/quiz')
