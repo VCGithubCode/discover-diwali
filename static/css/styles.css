@@ -1533,6 +1533,7 @@ p.ans {
   margin: 20px auto;
   width: 100%;
   max-width: 900px;
+  margin-top: 80px;
 }
 .map-wrapper {
   width: 100%;
@@ -1588,6 +1589,36 @@ svg {
   stroke: #000;
   stroke-width: 0.5;
   transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+/* STYLES FOR STATE DETAIL PAGE */
+
+.state-details-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  overflow: auto;
+}
+
+.state-details-wrapper h1, .state-details {
+  color: #000;
+}
+
+.back-button {
+  width: 2.5rem;
+  fill: #E5C366;
+  background-color: transparent;
+}
+
+.state-back-btn:active {
+  outline: none;
+}
+
+.back-button:hover {
+  width: 2.5rem;
+  fill: #b68e1f;
+  background-color: transparent;
 }
 
 /* Styles for interactive paths */
@@ -1668,21 +1699,26 @@ svg {
   width: 100%;
 }
 
-.registration form button, .registration-btn {
+.registration form button, .registration-btn, .zoom-button {
   background-color: #E5C366;
   box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #315cde;
   border: none;
+  border-radius: 30px;
   color: #000;
   font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
   font-size: small;
 }
 
-.registration form button:hover, .registration-btn:hover {
+.registration form button:hover, .registration-btn:hover, .zoom-button:hover {
   background-color: #E5C366;
   box-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
   color: #292929;
   font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
   font-size: small;
+}
+
+.zoom-button, .zoom-button:hover {
+  font-size: 2em;
 }
 
 /* -------- Style the countdown timer and holiday messages --------*/
@@ -1734,10 +1770,9 @@ svg {
   top: -6px;
 }
 
-.countdown-box, .map-wrapper {
+.countdown-box, .map-wrapper, .state-details {
   min-width: 100px;
   position: relative;
-  /* background: linear-gradient(145deg, #024899, #FAC845); */
   background-color: var(--bs-white);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.6), 0px 0px 10px rgba(255, 255, 255, 0.45);
@@ -1746,6 +1781,10 @@ svg {
   transition: all 0.3s ease;
   padding: 1rem;
   z-index: 0;
+}
+
+.state-details {
+  text-align: start;
 }
 
 .countdown-number {
@@ -1890,26 +1929,3 @@ svg {
 }
 
 /*--------------- STYLE MAP ZOOM -------------*/
-
-.zoom-controls {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 4px;
-  padding: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.zoom-button {
-  display: block;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: white;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.zoom-button:hover {
-  background: #f0f0f0;
-}
