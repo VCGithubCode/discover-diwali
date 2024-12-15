@@ -40,30 +40,40 @@ STATES = [
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
-    if "visited_states" not in session:
-        session["visited_states"] = []
+    if "user" not in session:
+        flash("Please log in to access your profile.", "error")
+        return redirect(url_for("login"))
+
+    username = session["user"]  # Logged-in user's username
 
     if request.method == "POST":
-        # Save the selected avatar in the session
+        # Handle avatar selection and save to MongoDB
         selected_avatar = request.form.get("avatar")
         if selected_avatar:
-            session["avatar"] = selected_avatar
+            users_collection.update_one(
+                {"username": username},
+                {"$set": {"avatar": selected_avatar}}
+            )
+            session["avatar"] = selected_avatar  # Update the session with the avatar
 
         return redirect(url_for("profile"))
 
-    # Calculate progress
+    # Fetch user data, including selected avatar
+    user = users_collection.find_one({"username": username})
+    selected_avatar = user.get("avatar", "")
     total_states = len(STATES)
-    visited_states = len(session["visited_states"])
+    visited_states = len(session.get("visited_states", []))
     remaining_states = total_states - visited_states
 
     return render_template(
         "profile.html",
         avatars=AVATARS,
-        selected_avatar=session.get("avatar", ""),
+        selected_avatar=selected_avatar,
         visited_states=visited_states,
         remaining_states=remaining_states,
         total_states=total_states,
     )
+
 
 
 @app.route('/')
@@ -206,7 +216,11 @@ def quiz_complete():
 # Leaderboard route
 @app.route('/leaderboard')
 def leaderboard():
-    top_users = list(users_collection.find().sort([("score", -1), ("username", 1)]).limit(10))
+    # Fetch top 10 users, including the avatar field
+    top_users = list(users_collection.find(
+        {}, {"username": 1, "score": 1, "last_score_date": 1, "avatar": 1}
+    ).sort([("score", -1), ("username", 1)]).limit(10))
+
     return render_template("leaderboard.html", users=top_users)
 
 
