@@ -2873,6 +2873,8 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0085A1;
   --bs-btn-disabled-border-color: #0085A1;
+  position: relative;
+  z-index: 11;
 }
 
 .btn-secondary {
@@ -10711,7 +10713,7 @@ blockquote {
   border-radius: 0;
   background-attachment: fixed;
   background-size: cover;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .star {
@@ -10721,6 +10723,7 @@ blockquote {
   border-radius: 1px;
   background: #fff;
   z-index: 3;
+  pointer-events: none;
 }
 
 @keyframes flicker {
@@ -10886,6 +10889,8 @@ header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
   color: #fff;
+  position: relative;
+  z-index: 11;
 }
 header.masthead .page-heading,
 header.masthead .site-heading {
@@ -11259,6 +11264,7 @@ button.btn {
   color: #000;
   font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
   font-size: small;
+  z-index: 10;
 }
 
 button.btn:hover {
@@ -11291,6 +11297,8 @@ span.close:hover {
   margin: 55px 50px 0 0;
   font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
   color: #f9fbfb;
+  position: relative;
+  z-index: 11;
 }
 .menu-items li {
   background-color: #0C3D40;
