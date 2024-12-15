@@ -1,4 +1,14 @@
+/**
+ * A class that handles the countdown and festival messages for Diwali.
+ *
+ * @class DiwaliCountdown
+ */
 class DiwaliCountdown {
+    /**
+     * Initializes the countdown.
+     *
+     * @constructor
+     */
     constructor() {
         // Cache DOM elements and add error handling
         const elements = ['days', 'hours', 'minutes', 'seconds', 'festival-message'].reduce((acc, id) => {
@@ -10,10 +20,10 @@ class DiwaliCountdown {
             return acc;
         }, {});
 
-        this.daysEl = elements['days'];
-        this.hoursEl = elements['hours'];
-        this.minutesEl = elements['minutes'];
-        this.secondsEl = elements['seconds'];
+        this.daysEl = elements.days;
+        this.hoursEl = elements.hours;
+        this.minutesEl = elements.minutes;
+        this.secondsEl = elements.seconds;
         this.messageEl = elements['festival-message'];
         this.countdownContainer = document.querySelector('.countdown-container');
 
@@ -38,11 +48,11 @@ class DiwaliCountdown {
         };
 
         this.festivalMessages = {
-            dhanteras: "✨ Welcome to Dhanteras! Today we celebrate new beginnings! Watch for twinkling lights! ✨",
-            narakaChaturdasi: "🪔 It's Choti Diwali! Time to light beautiful diyas and make rangoli! 🎨",
-            lakshmiPuja: "🎆 Happy Diwali! Today we celebrate with lights, sweets, and family fun! 🪔",
-            govardhanPuja: "🌟 Happy Govardhan Puja! Time to thank nature for its gifts! 🌺",
-            bhaiDooj: "❤️ Happy Bhai Dooj! Celebrating the special bond between brothers and sisters! 🤗"
+            dhanteras: "Welcome to Dhanteras! Today we celebrate new beginnings! Watch for twinkling lights! ",
+            narakaChaturdasi: "It's Choti Diwali! Time to light beautiful diyas and make rangoli! ",
+            lakshmiPuja: "Happy Diwali! Today we celebrate with lights, sweets, and family fun! ",
+            govardhanPuja: "Happy Govardhan Puja! Time to thank nature for its gifts! ",
+            bhaiDooj: "Happy Bhai Dooj! Celebrating the special bond between brothers and sisters! "
         };
 
         // Performance optimization: Cache the animation frame request
@@ -52,6 +62,9 @@ class DiwaliCountdown {
         this.init();
     }
 
+    /**
+     * Initializes the countdown.
+     */
     init() {
         // Initial update
         this.update();
@@ -67,12 +80,21 @@ class DiwaliCountdown {
         document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));
     }
 
+    /**
+     * Handles tab visibility changes.
+     */
     handleVisibilityChange() {
         if (!document.hidden) {
             this.update(); // Immediate update when tab becomes visible
         }
     }
 
+    /**
+     * Returns the next available Diwali date.
+     *
+     * @param {number} currentYear The current year.
+     * @returns {Date} The next available Diwali date or null.
+     */
     getNextDiwaliDate(currentYear) {
         // Get the next available Diwali date
         let year = currentYear;
@@ -84,7 +106,10 @@ class DiwaliCountdown {
         return this.diwaliDates[year].dhanteras;
     }
 
-  update() {
+    /**
+     * Updates the countdown.
+     */
+    update() {
         // Use simulated date for testing or real current date
         const now = this.simulatedDate || new Date(); // Simulate date for testing here Example: new Date(2025, 9, 20);
         const currentYear = now.getFullYear();
@@ -113,13 +138,19 @@ class DiwaliCountdown {
             if (nextDiwali) {
                 const diff = this.getTimeRemaining(nextDiwali);
                 this.updateCountdown(diff);
-                this.messageEl.textContent = "✨ Counting down to the magical festival of Diwali... ✨";
+                this.messageEl.textContent = "Counting down to the magical festival of Diwali... ";
             } else {
                 this.messageEl.textContent = "Future Diwali dates not available";
             }
         }
     }
 
+    /**
+     * Returns the time remaining until the given date.
+     *
+     * @param {Date} endDate The date to calculate the remaining time for.
+     * @returns {Object} An object with the remaining time in various units.
+     */
     getTimeRemaining(endDate) {
         const total = endDate.getTime() - Date.now();
         const seconds = Math.floor((total / 1000) % 60);
@@ -130,6 +161,11 @@ class DiwaliCountdown {
         return { total, days, hours, minutes, seconds };
     }
 
+    /**
+     * Updates the countdown display.
+     *
+     * @param {Object} diff The time remaining until the next festival.
+     */
     updateCountdown({ days, hours, minutes, seconds }) {
         // Batch DOM updates
         requestAnimationFrame(() => {
@@ -140,6 +176,11 @@ class DiwaliCountdown {
         });
     }
 
+    /**
+     * Shows a festival message.
+     *
+     * @param {string} festival The festival to show a message for.
+     */
     showFestivalMessage(festival) {
         if (this.messageEl.textContent !== this.festivalMessages[festival]) {
             this.messageEl.style.opacity = '0';
@@ -157,7 +198,9 @@ class DiwaliCountdown {
         }
     }
 
-    // Cleanup method
+    /**
+     * Cleans up the countdown.
+     */
     destroy() {
         if (this.intervalId) {
             clearInterval(this.intervalId);

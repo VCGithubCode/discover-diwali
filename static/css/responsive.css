@@ -23,7 +23,7 @@
   z-index: 1031;
 }
 
-.light-image-middel {
+.light-image-middle {
   width: 9rem; 
   left: 90%; 
   filter: blur(0.5px);
@@ -47,7 +47,7 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  .light-image-middel {
+  .light-image-middle {
     width: 7rem;
     left: 80%;
   }
@@ -64,7 +64,7 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  .light-image-middel {
+  .light-image-middle {
     width: 5rem;
     left: 75%;
   }

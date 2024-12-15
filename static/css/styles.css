@@ -98,6 +98,10 @@
   color: var(--bs-light);
 }
 
+[data-font-theme="dyslexic"] {
+  font-family: 'opendyslexic';
+}
+
 html, body {
   height: 100%;
   display: flex;
@@ -116,6 +120,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   margin: 0;
@@ -231,19 +238,19 @@ ul.list-unstyled.p-3 {
   z-index: 1031;
 }
 
-.light-image-middel {
+.light-image-middle {
   width: 9rem; 
   left: 90%; 
-  filter: blur(0.5px);
   -webkit-filter: blur(0.5px);
+  filter: blur(0.5px);
   z-index: 100;
 }
 
 .light-image-back {
   width: 5rem; 
   left: 48%; 
-  filter: blur(1px);
   -webkit-filter: blur(1px);
+  filter: blur(1px);
   z-index: -1;
 }
 
@@ -1236,6 +1243,7 @@ header.masthead .post-heading .meta a {
 /* Offcanvas Styles */
 .offcanvas {
   background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
