@@ -1,52 +1,63 @@
 {% extends "base.html" %}
 {% block content %}
-	<section class="contact-header pt-5 pb-3">
-		<div class="container">
-		  <div class="text-center">
+<section class="contact-header pt-5 pb-3">
+	<div class="container">
+		<div class="text-center">
 			<h1>Contact Us</h1>
 			<p>Reach out to us and lets discover the joy of Diwali together!</p>
-		  </div>
 		</div>
-	  </section>
-	  <section class="contact-form">
-		<form id="contactForm" name="contactForm" onsubmit="return sendMail(this);">
-		  <div class="mb-2 ">
+	</div>
+</section>
+<section class="contact-form">
+	<form id="contactForm" name="contactForm" onsubmit="return sendMail(this);">
+		<div class="mb-2 ">
 			<h2 class="hidden-heading">&#8203;</h2>
 			<label for="name" class="contactlabel form-label">Your name</label>
 			<input type="text" name="name" id="name" class="form-control" required>
 			<div id="nameHelp" class="form-text">Please provide your preferred name.</div><br>
-		  </div>
-  
-		  <div class="mb-2">
+		</div>
+
+		<div class="mb-2">
 			<label for="email" class="contactlabel form-label">Your email</label>
 			<input type="email" name="email" id="email" class="form-control" required>
 			<div id="emailHelp" class="form-text">
 				Please provide the email you would like us to send the response to.
 			</div><br>
-		  </div>
-  
-		  <div class="mb-3">
+		</div>
+
+		<div class="mb-3">
 			<label for="enquiry" class="contactlabel form-label">Your query</label>
-			<textarea rows="10" name="enquiry" id="enquiry" class="form-control" required></textarea>
-		  </div>
-  
-		  <div class="mb-3 form-check">
+			<textarea rows="10" name="message" id="message" class="form-control" required></textarea>
+		</div>
+
+		<div class="mb-3 form-check">
 			<input type="checkbox" class="form-check-input" id="exampleCheck1" required>
 			<label class="form-check-label" for="exampleCheck1">I have read and agreed to the <a
-				href="https://www.termsfeed.com/live/fabff9bf-356e-4897-943b-4322ed3624ed">privacy
-				policy</a></label>
-		  </div>
-  
-		  <div class="mb-2">
+					href="https://www.termsfeed.com/live/74756bf4-aeaa-4335-9bca-ad74cfa03bd3">privacy
+					policy</a></label>
+		</div>
+
+		<div class="mb-2">
 			<input 
-			  id="submit-button"
-			  class="btn btn-primary"
-			  type="submit"
-			  value="Submit Message"
-			  href="{{ url_for('index') }}"
-			  aria-label="clicking submit will redirect to another page"
+				id="submit-button"
+				class="btn btn-primary"
+				type="submit" value="Submit Message"
+				href="{{ url_for('thankyou') }}"
+				aria-label="clicking submit will redirect to another page"
 			>
-		  </div>
-		</form>
-	  </section>
+		</div>
+	</form>
+</section>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Eg-vzmRsjTa8bPTIS",
+      });
+   })();
+</script>
+<script src="/static/js/email.js"></script>
 {% endblock %}
