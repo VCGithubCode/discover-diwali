@@ -10774,6 +10774,16 @@ blockquote {
   letter-spacing: 0.0625em;
   text-transform: uppercase;
 }
+
+/* ----- Style the active class nav links and blur the stars behind them -------*/
+.active {
+  background: transparent;
+  -webkit-backdrop-filter: blur(0.625px);
+  backdrop-filter: blur(0.625px);
+  border-radius: 35px;
+  box-shadow: -1px -1px 5px var(--bs-white), -1px -1px 1px var(--bs-white), 1px 1px 5px var(--bs-black), 1px 1px 1px var(--bs-black);
+}
+
 @media (min-width: 992px) {
   #mainNav {
     border-bottom: 1px solid transparent;
@@ -10789,11 +10799,8 @@ blockquote {
   #mainNav .navbar-nav > li.nav-item > a.nav-link {
     color: #fff;
   }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-    color: #E5C366;
-    text-shadow: 2px 2px 2px #000;
-  }
 }
+
 @media (min-width: 992px) {
   #mainNav {
     transition: background-color 0.2s;
