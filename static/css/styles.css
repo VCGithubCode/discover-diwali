@@ -10722,7 +10722,8 @@ blockquote {
   border-radius: 0;
   background-attachment: fixed;
   background-size: cover;
-  overflow: visible;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .star {
@@ -10731,8 +10732,7 @@ blockquote {
   height: 1px;
   border-radius: 1px;
   background: #fff;
-  z-index: 3;
-  pointer-events: none;
+  z-index: 1;
 }
 
 @keyframes flicker {
@@ -10742,6 +10742,11 @@ blockquote {
 
 .main-container {
   flex: 1;
+  z-index: 99;
+}
+
+.theme-switch {
+  background-color: transparent;
 }
 
 #mainNav {
@@ -11563,15 +11568,44 @@ p.ans {
   color: #000;
 }
 
+/* SIGN UP / LOGIN  */
+.registration-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+}
+
+.registration {
+  width: 100%;
+}
+
+.registration form button, .registration-btn {
+  background-color: #E5C366;
+  box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #315cde;
+  border: none;
+  color: #000;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+.registration form button:hover, .registration-btn:hover {
+  background-color: #E5C366;
+  box-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
+  color: #292929;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
 
 /* -------- Style the countdown timer and holiday messages --------*/
-.countdown-container {
+.countdown-container, .registration {
   max-width: 800px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 5px;
   box-shadow: -1px -1px 5px var(--bs-white), -1px -1px 1px var(--bs-white), 1px 1px 5px var(--bs-black), 1px 1px 1px var(--bs-black);
   margin: 0 auto;
+  z-index: 100;
 }
 
 .countdown-boxes {
@@ -11592,6 +11626,19 @@ p.ans {
   left: 50%; 
   transform: translateX(-50%); 
   z-index: 1;
+}
+
+.registration-img {
+  width: 220px; 
+  top: -15px;
+  left: -9%; 
+  transform: rotate(315deg);
+  z-index: 1;
+}
+
+.login-img {
+  left: 81.5%; 
+  transform: rotate(44deg);
 }
 
 .chain {
