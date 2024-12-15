@@ -11486,6 +11486,7 @@ p.ans {
 }
 
 /* Style Map page */
+
 .map-container {
   text-align: center;
   margin: 20px auto;
@@ -11493,10 +11494,16 @@ p.ans {
   max-width: 900px;
 }
 .map-wrapper {
-  position: relative;
-  margin: 0 auto;
   width: 100%;
-  max-width: 800px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#svg2 {
+  max-width: 100%;
+  height: auto;
+  transform-origin: center center;
 }
 
 .city-label {
@@ -11763,7 +11770,7 @@ svg {
   100% { scale: 1; }
 }
 
-/* ----------------------------------------------STYLE ERROR PAGE---------------------------------------------- */
+/* ----------- STYLE ERROR PAGE ----------- */
 
 #error-img {
   display: flex;
@@ -11816,4 +11823,29 @@ svg {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+/*--------------- STYLE MAP ZOOM -------------*/
+
+.zoom-controls {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.zoom-button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.zoom-button:hover {
+  background: #f0f0f0;
 }
