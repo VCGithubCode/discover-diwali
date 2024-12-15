@@ -1,0 +1,76 @@
+
+/* Ensure all images are responsive */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid var(--bs-border-color);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Light image responsiveness */
+.light-image, .light-image-front {
+  width: 15rem; 
+  position: fixed;
+  top: -8px;
+  left: 16%; 
+  transform: translateX(-50%); 
+  z-index: 1031;
+}
+
+.light-image-middel {
+  width: 9rem; 
+  left: 90%; 
+  filter: blur(0.5px);
+  -webkit-filter: blur(0.5px);
+  z-index: 100;
+}
+
+.light-image-back {
+  width: 5rem; 
+  left: 48%; 
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  z-index: -1;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .light-image, .light-image-front {
+    width: 10rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .light-image-middel {
+    width: 7rem;
+    left: 80%;
+  }
+  .light-image-back {
+    width: 4rem;
+    left: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .light-image, .light-image-front {
+    width: 8rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .light-image-middel {
+    width: 5rem;
+    left: 75%;
+  }
+  .light-image-back {
+    width: 3rem;
+    left: 35%;
+  }
+}
+
