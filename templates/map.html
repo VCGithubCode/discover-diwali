@@ -7,22 +7,6 @@
             <p>Click on a state to learn how Diwali is celebrated in different regions.</p>
             
             <!-- India Map -->
-            <!-- <div class="map-wrapper">
-                
-                <img src="{{ url_for('static', filename='img/india-map.gif') }}" alt="India Map" class="india-map"> -->
-                
-                <!-- Clickable states -->
-                <!-- <div class="state-link uttar-pradesh" data-state="Uttar Pradesh">Uttar Pradesh</div>
-                <div class="state-link west-bengal" data-state="West Bengal">West Bengal</div>
-                <div class="state-link gujarat" data-state="Gujarat">Gujarat</div>
-                <div class="state-link maharashtra" data-state="Maharashtra">Maharashtra</div>
-                <div class="state-link tamil-nadu" data-state="Tamil Nadu">Tamil Nadu</div>
-                <div class="state-link kerala" data-state="Kerala">Kerala</div>
-                <div class="state-link karnataka" data-state="Karnataka">Karnataka</div>
-                <div class="state-link punjab" data-state="Punjab">Punjab</div>
-                <div class="state-link rajasthan" data-state="Rajasthan">Rajasthan</div>
-    
-            </div> -->
             <div class="map-wrapper d-flex justify-content-center">
                 <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" height="695.70178" width="100%" mapsvg:geoViewBox="68.184010 37.084109 97.418146 6.753659">
                     <metadata id="metadata44"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF> </metadata>
@@ -101,10 +85,10 @@
                     <text x="425" y="345" class="city-label">West Bengal</text>
                 </svg>
             </div>
-            <div class="zoom-controls">
-                <button type="button" onclick="zoomIn()">+</button>
-                <button type="button" onclick="zoomOut()">-</button>
-                <button type="button" onclick="resetPosition()">Reset</button>
+            <div class="zoom-controls p-5">
+                <button class="zoom-button px-3 me-3" type="button" onclick="zoomIn()">+</button>
+                <button class="zoom-button px-4" type="button" onclick="resetPosition()">Reset</button>
+                <button class="zoom-button px-3 ms-3" type="button" onclick="zoomOut()">-</button>
             </div>
         </div>
     </div>
