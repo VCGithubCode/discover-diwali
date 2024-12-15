@@ -10846,7 +10846,7 @@ footer {
 
 .footer-text {
   color: #E5C366;
-  text-shadow: 2px 2px 2px #000, -2px -2px 2px #000;
+  text-shadow: 1px 1px 0.5px #000, -1px -1px 0.5px #000;
 }
 
 .social-tags {
@@ -11482,6 +11482,15 @@ p.ans {
   width: 100%;
   max-width: 800px;
 }
+
+.city-label {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  fill: #333;
+  pointer-events: none;
+  text-anchor: middle;
+}
+
 .india-map {
   width: 100%;
   border: 2px solid #ccc;
@@ -11503,6 +11512,33 @@ p.ans {
 .state-link:hover {
   background-color: #f0f0f0;
   border-color: #666;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+.map-wrapper svg path {
+  fill: #419F76;
+  stroke: #000;
+  stroke-width: 1;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+/* Styles for interactive paths */
+.map-wrapper svg path.interactive {
+  cursor: pointer;
+}
+
+.map-wrapper svg path.interactive:hover {
+  fill: #FF5A31; 
+}
+
+/* Styles for disabled paths */
+.map-wrapper svg path.disabled {
+  fill: #ddd;
+  pointer-events: none;
 }
 
 /* Position clickable state names */
@@ -11630,7 +11666,7 @@ p.ans {
   top: -6px;
 }
 
-.countdown-box {
+.countdown-box, .map-wrapper {
   min-width: 100px;
   position: relative;
   /* background: linear-gradient(145deg, #024899, #FAC845); */
@@ -11711,10 +11747,7 @@ p.ans {
   100% { scale: 1; }
 }
 
-/* .celebrating .countdown-box { COUNTODOWN ANIMATION
-  animation: celebrate 2s infinite;
-} */
-/* error page styles */
+/* ----------------------------------------------STYLE ERROR PAGE---------------------------------------------- */
 
 #error-img {
   display: flex;
