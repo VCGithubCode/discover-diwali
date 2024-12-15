@@ -3,6 +3,16 @@ window.addEventListener('DOMContentLoaded', () => {
     const mainNav = document.getElementById('mainNav');
     const headerHeight = mainNav.clientHeight;
 
+    const interactivePaths = document.querySelectorAll('.interactive');
+    interactivePaths.forEach(path => {
+        path.addEventListener('click', function() {
+            const state = this.getAttribute('data-state');
+            if (state) {
+                navigateToState(state);
+            }
+        });
+    });
+
     // Handle navigation bar visibility on scroll
     window.addEventListener('scroll', function() {
         const currentTop = document.body.getBoundingClientRect().top * -1;
@@ -22,16 +32,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         scrollPos = currentTop;
     });
+});
 
-    // Interactive map: Navigate to state details
-    const stateLinks = document.querySelectorAll('.state-link');
-    stateLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            const state = this.getAttribute('data-state');
-            if (state) {
-                // Redirect to the state-specific page
-                window.location.href = `/state/${state}`;
-            }
-        });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    var tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl)
+    })
 });
