@@ -1773,7 +1773,7 @@ svg {
 .countdown-box, .map-wrapper, .state-details {
   min-width: 100px;
   position: relative;
-  background-color: var(--bs-white);
+  background-color: whitesmoke;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.6), 0px 0px 10px rgba(255, 255, 255, 0.45);
   color: var(--bs-black);
@@ -1809,17 +1809,6 @@ svg {
   transition: opacity 0.5s ease;
 }
 
-/* High Contrast Mode */
-[data-bs-theme="contrast"] .countdown-box {
-  background: #000 !important;
-  border: 2px solid #fff;
-}
-
-[data-bs-theme="contrast"] .festival-message {
-  background: #000 !important;
-  color: #fff !important;
-  border: 2px solid #fff;
-}
 
 /* Font Size Adjustments */
 .font-size-small .countdown-number {
