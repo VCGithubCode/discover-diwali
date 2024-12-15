@@ -1,12 +1,63 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Page Header-->
+
+<header class="masthead">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-11 col-lg-9 col-xl-8">
+                <div class="site-heading">
+                    <h1>Discover Diwali</h1>
+                    <span class="subheading">An exploration of Diwali</span>
+
+                    <div id="diwali-countdown" class="text-center mt-4">
+                        <div class="countdown-container">
+                            <div class="countdown-boxes p-4">
+                                <div class="countdown-item">
+                                    <img src="/static/img/chain.jpg" alt="Chain Image" class="countdown-image">
+                                    <div class="countdown-box">
+                                        <span id="days" class="countdown-number">00</span>
+                                        <span class="countdown-label">Days</span>
+                                    </div>
+                                </div>
+                                <div class="countdown-item">
+                                    <img src="/static/img/drape.jpg" alt="Drape Image" class="countdown-image">
+                                    <div class="countdown-box">
+                                        <span id="hours" class="countdown-number">00</span>
+                                        <span class="countdown-label">Hours</span>
+                                    </div>
+                                </div>
+                                <div class="countdown-item">
+                                    <img src="/static/img/chain.jpg" alt="Chain Image" class="countdown-image chain">
+                                    <div class="countdown-box">
+                                        <span id="minutes" class="countdown-number">00</span>
+                                        <span class="countdown-label">Minutes</span>
+                                    </div>
+                                </div>
+                                <div class="countdown-item">
+                                    <img src="/static/img/chain.jpg" alt="Chain Image" class="countdown-image chain">
+                                    <div class="countdown-box">
+                                        <span id="seconds" class="countdown-number">00</span>
+                                        <span class="countdown-label">Seconds</span>
+                                    </div>
+                                </div>
+                                <div id="festival-message" class="festival-message mt-3 p-4" role="alert"
+                                    aria-live="polite">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
 <div class="container mt-5">
     <!-- Header Section -->
     <div class="text-center">
         <h1 class="mb-4">🎉 Welcome to Diwali Discovery! 🎉</h1>
         <p class="lead">
-            Get ready for an exciting journey! 🌟 Discover the wonders of Diwali as you explore, learn, and play! 
+            Get ready for an exciting journey! 🌟 Discover the wonders of Diwali as you explore, learn, and play!
             Travel to colorful places, unlock cool quizzes, and climb the leaderboard to become a Diwali Champion! 🌟✨
         </p>
     </div>
@@ -14,7 +65,8 @@
     <!-- Carousel Section -->
     <div id="featuresCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
@@ -26,8 +78,10 @@
                 <div class="text-center">
                     <i class="fa-solid fa-map-location-dot fa-5x mb-3"></i>
                     <h2>Explore the Interactive Map</h2>
-                    <img src="/static/img/cartoon-indiamap.jpg" alt="Interactive Map Preview" class="img-fluid feature-thumbnail mb-3">
-                    <p class="lead">🌍 Travel across India and discover how each state celebrates Diwali. Tap on a state to see unique stories, videos, and fun facts! 🚀✨</p>
+                    <img src="/static/img/cartoon-indiamap.jpg" alt="Interactive Map Preview"
+                        class="img-fluid feature-thumbnail mb-3">
+                    <p class="lead">🌍 Travel across India and discover how each state celebrates Diwali. Tap on a state
+                        to see unique stories, videos, and fun facts! 🚀✨</p>
                 </div>
             </div>
 
@@ -37,7 +91,8 @@
                     <i class="fa-solid fa-brain fa-5x mb-3"></i>
                     <h2>Take the Quiz Challenge!</h2>
                     <img src="/static/img/cartoon-quiz.jpg" alt="Quiz Preview" class="img-fluid feature-thumbnail mb-3">
-                    <p class="lead">🤔 Test your Diwali knowledge! Answer fun questions and see how many you can get right. The more you get right, the higher you climb! 🧠🏅</p>
+                    <p class="lead">🤔 Test your Diwali knowledge! Answer fun questions and see how many you can get
+                        right. The more you get right, the higher you climb! 🧠🏅</p>
                 </div>
             </div>
 
@@ -46,8 +101,10 @@
                 <div class="text-center">
                     <i class="fa-solid fa-trophy fa-5x mb-3"></i>
                     <h2>Climb the Leaderboard!</h2>
-                    <img src="/static/img/cartoon-leaderboard.jpg" alt="Leaderboard Preview" class="img-fluid feature-thumbnail mb-3">
-                    <p class="lead">🏆 Compete with your friends to be the best! Check out your rank on the leaderboard and aim for the top spot! 🥇🥈🥉</p>
+                    <img src="/static/img/cartoon-leaderboard.jpg" alt="Leaderboard Preview"
+                        class="img-fluid feature-thumbnail mb-3">
+                    <p class="lead">🏆 Compete with your friends to be the best! Check out your rank on the leaderboard
+                        and aim for the top spot! 🥇🥈🥉</p>
                 </div>
             </div>
 
@@ -56,8 +113,10 @@
                 <div class="text-center">
                     <i class="fa-solid fa-chart-line fa-5x mb-3"></i>
                     <h2>Track Your Progress</h2>
-                    <img src="/static/img/cartoon-progressbar.jpg" alt="Progress Tracker Preview" class="img-fluid feature-thumbnail mb-3">
-                    <p class="lead">📈 Track how many states you've explored and how many are left. Watch your progress grow as you explore more of India’s Diwali traditions! 🎉</p>
+                    <img src="/static/img/cartoon-progressbar.jpg" alt="Progress Tracker Preview"
+                        class="img-fluid feature-thumbnail mb-3">
+                    <p class="lead">📈 Track how many states you've explored and how many are left. Watch your progress
+                        grow as you explore more of India’s Diwali traditions! 🎉</p>
                 </div>
             </div>
 
@@ -66,8 +125,10 @@
                 <div class="text-center">
                     <i class="fa-solid fa-user-ninja fa-5x mb-3"></i>
                     <h2>Create Your Custom Avatar</h2>
-                    <img src="/static/img/cartoon-avatar.jpg" alt="Avatar Preview" class="img-fluid feature-thumbnail mb-3">
-                    <p class="lead">👤 Create your own special avatar to show off on the leaderboard. Be unique, be creative, and let your friends see your awesome style! 🦸‍♂️🦸‍♀️</p>
+                    <img src="/static/img/cartoon-avatar.jpg" alt="Avatar Preview"
+                        class="img-fluid feature-thumbnail mb-3">
+                    <p class="lead">👤 Create your own special avatar to show off on the leaderboard. Be unique, be
+                        creative, and let your friends see your awesome style! 🦸‍♂️🦸‍♀️</p>
                 </div>
             </div>
         </div>
