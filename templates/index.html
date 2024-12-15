@@ -75,60 +75,65 @@
         <div class="carousel-inner">
             <!-- Slide 1: Interactive Map -->
             <div class="carousel-item active">
-                <div class="text-center">
-                    <i class="fa-solid fa-map-location-dot fa-5x mb-3"></i>
-                    <h2>Explore the Interactive Map</h2>
-                    <img src="/static/img/cartoon-indiamap.jpg" alt="Interactive Map Preview"
-                        class="img-fluid feature-thumbnail mb-3">
+                <div class="text-center">                    
+                    <a href="{{ url_for('map') }}">
+                        <i class="fa-solid fa-map-location"></i><h2>Explore the Interactive Map</h2>
+                    </a>            
+                    </li>                    
                     <p class="lead">🌍 Travel across India and discover how each state celebrates Diwali. Tap on a state
                         to see unique stories, videos, and fun facts! 🚀✨</p>
+                    <img src="/static/img/cartoon-indiamap.jpg" alt="Interactive Map Preview"
+                        class="img-fluid feature-thumbnail mb-3">                    
                 </div>
             </div>
 
             <!-- Slide 2: Quiz Challenge -->
             <div class="carousel-item">
                 <div class="text-center">
-                    <i class="fa-solid fa-brain fa-5x mb-3"></i>
-                    <h2>Take the Quiz Challenge!</h2>
-                    <img src="/static/img/cartoon-quiz.jpg" alt="Quiz Preview" class="img-fluid feature-thumbnail mb-3">
+                    <a href="{{ url_for('quiz') }}">
+                        <i class="fa-solid fa-brain"></i><h2>Take the Quiz Challenge!</h2>
+                    </a>
                     <p class="lead">🤔 Test your Diwali knowledge! Answer fun questions and see how many you can get
                         right. The more you get right, the higher you climb! 🧠🏅</p>
+                    <img src="/static/img/cartoon-quiz.jpg" alt="Quiz Preview" class="img-fluid feature-thumbnail mb-3">                    
                 </div>
             </div>
 
             <!-- Slide 3: Leaderboard -->
             <div class="carousel-item">
                 <div class="text-center">
-                    <i class="fa-solid fa-trophy fa-5x mb-3"></i>
-                    <h2>Climb the Leaderboard!</h2>
-                    <img src="/static/img/cartoon-leaderboard.jpg" alt="Leaderboard Preview"
-                        class="img-fluid feature-thumbnail mb-3">
+                    <a href="{{ url_for('leaderboard') }}">
+                        <i class="fa-solid fa-trophy"></i>
+                        <h2>Climb the Leaderboard!</h2>
+                    </a>
                     <p class="lead">🏆 Compete with your friends to be the best! Check out your rank on the leaderboard
                         and aim for the top spot! 🥇🥈🥉</p>
+                    <img src="/static/img/cartoon-leaderboard.jpg" alt="Leaderboard Preview"
+                        class="img-fluid feature-thumbnail mb-3">                    
                 </div>
             </div>
 
             <!-- Slide 4: Progress Tracker -->
             <div class="carousel-item">
                 <div class="text-center">
-                    <i class="fa-solid fa-chart-line fa-5x mb-3"></i>
+                    <i class="fa-solid fa-chart-line"></i>
                     <h2>Track Your Progress</h2>
-                    <img src="/static/img/cartoon-progressbar.jpg" alt="Progress Tracker Preview"
-                        class="img-fluid feature-thumbnail mb-3">
                     <p class="lead">📈 Track how many states you've explored and how many are left. Watch your progress
                         grow as you explore more of India’s Diwali traditions! 🎉</p>
+                    <img src="/static/img/cartoon-progressbar.jpg" alt="Progress Tracker Preview"
+                        class="img-fluid feature-thumbnail mb-3">                    
                 </div>
             </div>
 
             <!-- Slide 5: Custom Avatars -->
             <div class="carousel-item">
                 <div class="text-center">
-                    <i class="fa-solid fa-user-ninja fa-5x mb-3"></i>
+                    <i class="fa-solid fa-user-ninja"></i>
                     <h2>Create Your Custom Avatar</h2>
-                    <img src="/static/img/cartoon-avatar.jpg" alt="Avatar Preview"
-                        class="img-fluid feature-thumbnail mb-3">
                     <p class="lead">👤 Create your own special avatar to show off on the leaderboard. Be unique, be
                         creative, and let your friends see your awesome style! 🦸‍♂️🦸‍♀️</p>
+                    <img src="/static/img/cartoon-avatar.jpg" alt="Avatar Preview"
+                        class="img-fluid feature-thumbnail mb-3">                    
                 </div>
             </div>
         </div>

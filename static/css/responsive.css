@@ -74,6 +74,8 @@
   }
 }
 
+/* responsive styling for quiz */
+
 /* General Button Styles */
 .ans {
   display: block;
@@ -133,3 +135,160 @@
   }
 }
 
+/* responsive styling for carousel and its elements */
+
+/* Override FontAwesome Sizes */
+.fa-solid {
+  font-size: 4rem !important; /* Default */
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .fa-solid {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .fa-solid {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* Adjust Carousel Navigation */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%; /* Reduce width to avoid overlap */
+  top: 40%; /* Align vertically */
+  transform: translateY(-50%);
+  opacity: 0.7; /* Reduce visibility slightly */
+}
+
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+    top: 35%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12%;
+    top: 30%;
+  }
+}
+
+/* Countdown Timer Responsive Styles */
+.countdown-container {
+  max-width: 800px; /* Default maximum width */
+  margin: 0 auto;
+}
+
+.countdown-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  position: relative;
+}
+
+.countdown-image {
+  width: 100px; /* Default image size */
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.countdown-box {
+  min-width: 120px; /* Default size */
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.countdown-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* Tablet View (max-width: 768px) */
+@media (max-width: 768px) {
+  .countdown-boxes {
+    gap: 1rem; /* Reduce spacing */
+  }
+
+  .countdown-image {
+    width: 80px; /* Smaller image */
+  }
+
+  .countdown-box {
+    min-width: 100px; /* Adjust box size */
+    padding: 0.8rem;
+  }
+
+  .countdown-number {
+    font-size: 1.5rem; /* Smaller font */
+  }
+
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile View (max-width: 576px) */
+@media (max-width: 576px) {
+  .countdown-boxes {
+    gap: 0.5rem; /* Even less spacing */
+  }
+
+  .countdown-image {
+    width: 60px; /* Smallest image size */
+  }
+
+  .countdown-box {
+    min-width: 80px; /* Smaller boxes */
+    padding: 0.5rem;
+  }
+
+  .countdown-number {
+    font-size: 1.2rem; /* Smaller font for numbers */
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Ensure .btn stays on top of all content */
+.btn {
+  
+  z-index: 9999 !important; /* Ensures it stays above all other elements */
+  top: 20px; /* Adjust to position the button relative to the top of the screen */
+  right: 20px; /* Adjust to position the button relative to the right of the screen */
+}
+
+@media (max-width: 768px) {
+  .btn {
+    top: 10px; /* Adjust position for smaller screens */
+    right: 10px; /* Adjust position for smaller screens */
+    font-size: 0.9rem; /* Adjust button font size on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    top: 5px; /* Further adjust for smaller devices */
+    right: 5px; /* Further adjust for smaller devices */
+    font-size: 0.8rem; /* Smaller font size on smaller screens */
+  }
+}

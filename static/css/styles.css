@@ -81,21 +81,27 @@
 }
 
 /* Contrast Theme */
-[data-bs-theme="contrast"] {
-  --bs-primary: #000000;
-  --bs-secondary: #ffffff;
-  --bs-success: #00ff00;
-  --bs-info: #00ffff;
-  --bs-warning: #ffff00;
-  --bs-danger: #ff0000;
-  --bs-light: #ffffff;
-  --bs-dark: #000000;
-  --bs-font-sans-serif: 'Poppins', sans-serif;
-  --bs-font-monospace: 'Courier New', monospace;
-  --bs-body-color-rgb: 255, 255, 255;
+.high-contrast {
+  background-color: #000 !important; /* Black background */
+  color: #fff !important; /* White text */
+}
 
-  background-color: var(--bs-dark);
-  color: var(--bs-light);
+.high-contrast a {
+  color: #ff0 !important; /* Bright yellow links */
+  text-decoration: underline;
+}
+
+.high-contrast .btn {
+  background-color: #000 !important;
+  color: #ff0 !important;
+  border: 2px solid #ff0 !important;
+}
+
+
+
+
+.dyslexic-font {
+  font-family: 'Open-Dyslexic', sans-serif !important;
 }
 
 [data-font-theme="dyslexic"] {
@@ -235,7 +241,7 @@ ul.list-unstyled.p-3 {
   top: -8px;
   left: 16%; 
   transform: translateX(-50%); 
-  z-index: 1031;
+  z-index: 9;
 }
 
 .light-image-middle {
@@ -877,6 +883,9 @@ ul.list-unstyled.p-3 {
   background-color: #000;
 }
 
+.lead {
+  color: white;
+}
 
 /* About page styling*/
 .feature-thumbnail {
@@ -1063,9 +1072,11 @@ footer {
 
 header.masthead {
   position: relative;
-  margin-bottom: 3rem;
-  padding-top: calc(8rem + 57px);
-  padding-bottom: 8rem;
+  margin-bottom: 3.5rem;
+  margin-top: 50px;
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
+  
 /* Photo by Balaji J: https://www.pexels.com/photo/lighted-candles-on-flowers-11661801/ */
   background-image: url('/static/img/patern.jpg');
   background-repeat: no-repeat;
@@ -1781,7 +1792,7 @@ svg {
 .countdown-box, .map-wrapper, .state-details {
   min-width: 100px;
   position: relative;
-  background-color: var(--bs-white);
+  background-color: whitesmoke;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.6), 0px 0px 10px rgba(255, 255, 255, 0.45);
   color: var(--bs-black);
@@ -1817,17 +1828,6 @@ svg {
   transition: opacity 0.5s ease;
 }
 
-/* High Contrast Mode */
-[data-bs-theme="contrast"] .countdown-box {
-  background: #000 !important;
-  border: 2px solid #fff;
-}
-
-[data-bs-theme="contrast"] .festival-message {
-  background: #000 !important;
-  color: #fff !important;
-  border: 2px solid #fff;
-}
 
 /* Font Size Adjustments */
 .font-size-small .countdown-number {
