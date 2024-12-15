@@ -11798,15 +11798,20 @@ svg {
   align-items: center;
 }
 
+.error-message p {
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+  color: var(--bs-gray-400) !important;
+}
+
 #error-button {
-  background-color: var(--purple);
-  color: white;
-  border: none;
+  background-color: #E5C366;
+  box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #b57ad5;
+  color: #000;
+  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
   padding: 5px 15px;
   margin-bottom: 25px;
   text-align: center;
   font-size: 16px;
-  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -11823,13 +11828,27 @@ svg {
 }
 
 .contact-form {
-  width: 75%;
+  width: 85%;
   margin: 0 auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+#contactForm {
+  width: 65%;
+}
+
+.contactlabel {
+  font-size: x-large;
+  padding-left: 25px;
+}
+
+.form-text {
+  font-size: large !important;
+  color: var(--bs-gray-400) !important;
 }
 
 /*--------------- STYLE MAP ZOOM -------------*/
