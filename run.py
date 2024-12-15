@@ -4,6 +4,8 @@ from pymongo import MongoClient
 from pathlib import Path
 from urllib.parse import unquote
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
+import atexit
 
 if os.path.exists("env.py"):
     import env
@@ -138,19 +140,40 @@ def logout():
 # Quiz completion endpoint
 @app.route('/quiz_complete', methods=["POST"])
 def quiz_complete():
-    score = request.form.get("score")
-    if "user" in session:
-        users_collection.update_one(
+    if "user" not in session:
+        return jsonify({"success": False, "error": "User not logged in"}), 401
+
+    try:
+        score = int(request.form.get("score", 0))
+        if score < 0 or score > 10:
+            return jsonify({"success": False, "error": "Invalid score"}), 400
+    except ValueError:
+        return jsonify({"success": False, "error": "Invalid score format"}), 400
+
+    user = users_collection.find_one({"username": session["user"]})
+    if not user:
+        return jsonify({"success": False, "error": "User not found"}), 404
+
+    try:
+        result = users_collection.update_one(
             {"username": session["user"]}, 
-            {"$set": {"score": int(score)}}
+            {"$set": {"score": score, "last_score_date": datetime.utcnow()}}
         )
-    return redirect(url_for("leaderboard"))
+        print(f"Query Result: Matched {result.matched_count}, Modified {result.modified_count}")
+    except Exception as e:
+        print(f"Error updating user score: {e}")
+        return jsonify({"success": False, "error": "Database update failed"}), 500
+
+    if result.modified_count > 0:
+        return jsonify({"success": True})
+    else:
+        return jsonify({"success": False, "error": "Score not updated"}), 400
 
 
 # Leaderboard route
 @app.route('/leaderboard')
 def leaderboard():
-    top_users = list(users_collection.find().sort("score", -1).limit(10))
+    top_users = list(users_collection.find().sort([("score", -1), ("username", 1)]).limit(10))
     return render_template("leaderboard.html", users=top_users)
 
 
@@ -161,3 +184,11 @@ if __name__ == '__main__':
             port=int(os.environ.get("PORT", "5001")),
             debug="DEVELOPMENT" in os.environ
     )
+
+
+def close_db_connection():
+    if client:
+        client.close()
+
+# Register cleanup function to close DB connections on exit
+atexit.register(close_db_connection)
