@@ -41,8 +41,7 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'map' %}active{% endif %}" href="{{ url_for('map') }}">Map</a>
                         </li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'quiz' %}active{% endif %}" href="{{ url_for('quiz') }}">Quiz</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('about') }}">About</a></li>
+                        </li>                        
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a></li>
                     {% if session.user %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'leaderboard' %}active{% endif %}" href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
