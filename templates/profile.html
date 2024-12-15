@@ -33,7 +33,7 @@
         
         <!-- Progress Section -->
         <div class="row mt-5">
-            <div class="col-md-6 offset-md-3 text-center">
+            <div class="col-md-8 offset-md-2 text-center">
                 <h3>State Progress</h3>
                 <p>States Visited: <strong>{{ visited_states }}</strong> / {{ total_states }}</p>
                 <p>States Remaining: <strong>{{ remaining_states }}</strong></p>
@@ -45,6 +45,24 @@
                         {{ (visited_states / total_states) * 100 }}%
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- List of Visited States -->
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h3>Visited States</h3>
+                {% if visited_states_list %}
+                    <ul class="list-group">
+                        {% for state in visited_states_list %}
+                            <li class="list-group-item">
+                                <i class="fas fa-map-marker-alt text-success"></i> {{ state }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No states visited yet.</p>
+                {% endif %}
             </div>
         </div>
     </div>
