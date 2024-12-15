@@ -1,3 +1,4 @@
+
 /**
  * A class that handles the countdown and festival messages for Diwali.
  *
@@ -11,21 +12,16 @@ class DiwaliCountdown {
      */
     constructor() {
         // Cache DOM elements and add error handling
-        const elements = ['days', 'hours', 'minutes', 'seconds', 'festival-message'].reduce((acc, id) => {
-            const element = document.getElementById(id);
-            if (!element) {
-                throw new Error(`Required element #${id} not found`);
-            }
-            acc[id] = element;
-            return acc;
-        }, {});
-
-        this.daysEl = elements.days;
-        this.hoursEl = elements.hours;
-        this.minutesEl = elements.minutes;
-        this.secondsEl = elements.seconds;
-        this.messageEl = elements['festival-message'];
+        this.daysEl = document.getElementById('days');
+        this.hoursEl = document.getElementById('hours');
+        this.minutesEl = document.getElementById('minutes');
+        this.secondsEl = document.getElementById('seconds');
+        this.messageEl = document.getElementById('festival-message');
         this.countdownContainer = document.querySelector('.countdown-container');
+
+        if (!this.daysEl || !this.hoursEl || !this.minutesEl || !this.secondsEl || !this.messageEl || !this.countdownContainer) {
+            throw new Error('Required element not found');
+        }
 
         // Month is 0-based in JavaScript (9 = October, 10 = November)
         this.diwaliDates = {
@@ -54,10 +50,6 @@ class DiwaliCountdown {
             govardhanPuja: "Happy Govardhan Puja! Time to thank nature for its gifts! ",
             bhaiDooj: "Happy Bhai Dooj! Celebrating the special bond between brothers and sisters! "
         };
-
-        // Performance optimization: Cache the animation frame request
-        this.animationFrameId = null;
-        this.intervalId = null;
 
         this.init();
     }
@@ -95,15 +87,21 @@ class DiwaliCountdown {
      * @param {number} currentYear The current year.
      * @returns {Date} The next available Diwali date or null.
      */
+
     getNextDiwaliDate(currentYear) {
         // Get the next available Diwali date
         let year = currentYear;
-        while (!this.diwaliDates[year]) {
-            year++;
-            // Prevent infinite loop
-            if (year > currentYear + 10) return null;
+        const availableYears = Object.keys(this.diwaliDates).map(Number);
+        
+        // If current year is beyond our last available date,
+        // cycle back to the earliest date
+        if (year > Math.max(...availableYears)) {
+            return this.diwaliDates[Math.min(...availableYears)].dhanteras;
         }
-        return this.diwaliDates[year].dhanteras;
+        
+        // Find the next available year
+        const nextYear = availableYears.find(y => y >= year);
+        return nextYear ? this.diwaliDates[nextYear].dhanteras : this.diwaliDates[Math.min(...availableYears)].dhanteras;
     }
 
     /**
@@ -217,6 +215,22 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         window.diwaliCountdown = new DiwaliCountdown();
     } catch (error) {
-        console.error('Failed to initialize Diwali countdown:', error);
+        console.error('Error initializing Diwali countdown:', error);
     }
 });
+
+// Use a single ResizeObserver for all instances
+const resizeObserver = window.ResizeObserver ? new ResizeObserver(entries => {
+    if (entries.length > 0) {
+        for (const countdown of document.querySelectorAll('.countdown')) {
+            const instance = countdown.diwaliCountdown;
+            if (instance) {
+                instance.update();
+            }
+        }
+    }
+}) : null;
+
+// Observe all countdown containers
+document.querySelectorAll('.countdown-container').forEach(container => resizeObserver.observe(container));
+
