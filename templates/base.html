@@ -72,31 +72,45 @@
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'quiz' %}active{% endif %}" href="{{ url_for('quiz') }}">Quiz</a>
                             </li>                        
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a></li>
+                        
                         {% if session.user %}
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'leaderboard' %}active{% endif %}" href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'logout' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'logout' %}active{% endif %}" href="{{ url_for('logout') }}">Logout</a></li>
-                            <li class="nav-item">
+                            <!-- Dropdown for Logged-In User -->
+                            <li class="nav-item dropdown d-flex align-items-center ms-5">
+                                <!-- Avatar as Dropdown Toggle -->
                                 {% if session.avatar %}
-                                    <img src="{{ url_for('static', filename='img/avatars/' + session.avatar) }}" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">                           
+                                    <a class="nav-item dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="{{ url_for('static', filename='img/avatars/' + session.avatar) }}" alt="User Avatar" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                        <span>{{ session.user }}</span>
+                                    </a>
                                 {% else %}
-                                    <span class="nav-link px-lg-3 py-3 py-lg-4">Welcome, {{ session.user }}!</span>
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ session.user }}
+                                    </a>
                                 {% endif %}
-                            </li>                            
+
+                                <!-- Dropdown Menu -->
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a></li>
+                                    <li><a class="dropdown-item {% if request.endpoint == 'leaderboard' %}active{% endif %}" href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item {% if request.endpoint == 'logout' %}active{% endif %}" href="{{ url_for('logout') }}">Logout</a></li>
+                                </ul>
+                            </li>
                         {% else %}
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'register' %}active{% endif %}" href="{{ url_for('register') }}">Register</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'login' %}active{% endif %}" href="{{ url_for('login') }}">Login</a></li>
-                        {% endif %}                                                   
-                            <li><button class="btn btn-secondary mt-2" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
-                                    class="fas fa-universal-access"></i> Accessibility</button></li>
+                            <!-- Links for Not Logged-In Users -->
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('login') }}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('register') }}">Register</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
+        <button class="btn access-btn pe-5" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                class="fas fa-universal-access"></i> Accessibility</button>
 
         <!-- Canvas sidebar -->
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="5" id="offcanvasWithBothOptions"
             aria-labelledby="offcanvasWithBothOptionsLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Accessibility Settings</h5>
