@@ -37,8 +37,6 @@ The **Goal** section provides a concise summary of the main objective or purpose
 
 - 🎄 **Benefits:** Discover Diwali brings the holiday season to life by creating an inclusive and educational space where users can explore the festival's rich traditions, regiona
 
-
-
 # Project Overview 
 
 "Diwali Discovery" is an interactive educational app where kids explore an interactive map of India and learn how Diwali is celebrated in different Indian states. Each state reveals a short video or story write-up about the unique way Diwali is celebrated in that region. Kids can also click on a "Lessons Learned" link for each state, which takes them to a summary of the key cultural and historical insights for that region. As kids complete the exploration for each state, they earn progress points, and a progress bar shows how much they have explored. Once all states are explored, kids unlock a Diwali Quiz, which tests their knowledge. Completing the quiz places them on a global leaderboard, encouraging competition and learning.
@@ -61,7 +59,7 @@ The **Goal** section provides a concise summary of the main objective or purpose
   * [Technologies Used](#technologies-used)
   * [Validation](#validation)
   * [Deployment](#deployment)
-* [Future Adding](#future-adding)
+* [Accessibility](#accessibility)
 * [Team](#team)
 * [Acknowledgement](#acknowledgement)
 # Website Structure
@@ -166,11 +164,14 @@ For Python, the following validator was used: [PEP8CI](https://pep8ci.herokuapp.
 # Future Adding
 *<span style="color: blue;">[Back to Content](#content)</span>*
 # Deployment
-Vercel was used for deployment. Please visit the [Diwali Discovery](https://diwali-discovery.vercel.app) website.
-
-
+Vercel was used for deployment. Please visit the [Diwali Discovery](https://discover-diwali.vercel.app/) website.
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
+
+# Accessibility
+
+ The team carried forward accessibility features from our last hackathon in this project. We included a high-contrast color mode to improve readability for visually impaired users and added an option to enable a dyslexic-friendly font, ensuring a more inclusive experience for individuals with reading difficulties. These features reflect our commitment to making the platform accessible and enjoyable for everyone.
+
 # Team
 Here is the hackathon team page: [Hackathon Team](https://hackathon.codeinstitute.net/teams/493/)
 
@@ -184,6 +185,12 @@ Here is the hackathon team page: [Hackathon Team](https://hackathon.codeinstitut
 ### Role: Backend & Presentation & Main App Info & Styling
 - GitHub: [Ashwinkarthik Selvaraj ](https://github.com/ashwinsel)
 - LinkedIn: [Ashwin's LinkedIn]( https://shorturl.at/sGnh7)
+
+## Mia  Rasmussen
+### Role: Global Styles & Avatars & Landing Page & Testing
+- GitHub: [Mia Rasmussen ](https://github.com/MiaRasmussen05)
+- LinkedIn: [Mia's LinkedIn]( https://www.linkedin.com/in/mia-rasmussen-088091226/)
+
 ## Jonathan Dussot
 ### Role: 404 and 500 Error Pages
 - GitHub: [JonathanDussot]( https://github.com/JonathanDussot)
