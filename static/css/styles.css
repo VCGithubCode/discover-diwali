@@ -1584,7 +1584,7 @@ p.ans {
 }
 
 .map-container h1, .map-container p, .contact-page h1, .contact-page p, .page h1, .leaderboard h1, .leaderboard p,
-.profile h1, .profile h3, .profile p {
+.profile h1, .profile h3, .profile p, footer p {
   color: #fff;
   text-shadow: 2px 2px 2px #000;
 }
@@ -1637,17 +1637,21 @@ svg {
   color: #000;
 }
 
-.back-button {
+.back-button, .back-button-social {
   width: 4rem;
   fill: #E5C366;
   background-color: transparent;
+}
+
+.back-button-social {
+  filter: drop-shadow(2px 2px 1px #000);
 }
 
 .state-back-btn:active {
   outline: none;
 }
 
-.back-button:hover {
+.back-button:hover, .back-button-social:hover {
   width: 4rem;
   fill: #b68e1f;
   background-color: transparent;
@@ -2084,4 +2088,36 @@ td .leaderboard-avatar {
 .profile .list-group-item path {
   fill: #E5C366;
   filter: drop-shadow(6px 6px 4px #000);
+}
+
+.social-links {
+  position: relative;
+  width: 100px;
+  height: 50px;
+}
+
+.social-links a {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.social-links a:hover {
+  fill: #b68e1f;
+}
+
+.social-links a.linkedin {
+  left: 0;
+  clip-path: inset(0 50% 0 0);
+  margin-left: 25px;
+}
+
+.social-links a.github {
+  width: 60%;
+  right: 0;
+  clip-path: inset(0 0 0 50%);
+  margin-right: 20px;
+  margin-top: -1px;
 }
