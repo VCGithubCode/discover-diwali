@@ -1435,9 +1435,12 @@ main.container-fluid {
   color: rgb(4, 4, 4);
   border: 0.5px solid #800707;
   border-radius: 6px;
+  font-family: "Space Mono", monospace, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-family: "Lora", serif, sans-serif;
   font-weight: 700;
   height: 10vh;
+
 }
 
 /* Display score */
@@ -1731,7 +1734,7 @@ svg {
 }
 
 /* -------- Style the countdown timer and holiday messages --------*/
-.countdown-container, .registration {
+.countdown-container, .registration, .quiz-wrapper {
   max-width: 800px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
