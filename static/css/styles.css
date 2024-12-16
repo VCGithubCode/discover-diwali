@@ -241,7 +241,8 @@ ul.list-unstyled.p-3 {
   top: -8px;
   left: 16%; 
   transform: translateX(-50%); 
-  z-index: 9;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .light-image-middle {
@@ -249,7 +250,8 @@ ul.list-unstyled.p-3 {
   left: 90%; 
   -webkit-filter: blur(0.5px);
   filter: blur(0.5px);
-  z-index: 100;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .light-image-back {
@@ -1429,12 +1431,16 @@ main.container-fluid {
   padding: 2%;  
 }
 .question-box {
-  background-color: rgba(248, 216, 100, 0.8);
+  background-color: rgba(223, 120, 3, 0.8);
   color: rgb(4, 4, 4);
   border: 0.5px solid #800707;
   border-radius: 6px;
   font-family: "Space Mono", monospace, Arial, Helvetica, sans-serif;
   font-weight: 400;
+  font-family: "Lora", serif, sans-serif;
+  font-weight: 700;
+  height: 10vh;
+
 }
 
 /* Display score */
@@ -1472,6 +1478,24 @@ p.ans {
   background-color: #ea070b !important;
 }
 
+#next {
+  background-color: rgba(248, 216, 100, 0.6);
+  color: #800707;
+  font-size: large;
+  font-weight: 700;
+  height: 6vh;
+  border: 0.5px solid #800707;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 42%;
+  cursor: pointer;
+}
+
+#next:hover {
+  
+    background-color: rgba(230, 220, 200, 0.6);
+  }
 
 /* Style responsive UX */
 /* For screen sizes with widths less than 1300px */
@@ -1673,52 +1697,7 @@ svg {
   pointer-events: none;
 }
 
-/* Position clickable state names */
-.uttar-pradesh {
-  top: 40%; /* Adjust percentage for accurate positioning */
-  left: 45%;
-  color: #000;
-}
-.west-bengal {
-  top: 42%;
-  left: 62%;
-  color: #000;
-}
-.gujarat {
-  top: 50%;
-  left: 20%;
-  color: #000;
-}
-.maharashtra {
-  top: 55%;
-  left: 30%;
-  color: #000;
-}
-.tamil-nadu {
-  top: 78%;
-  left: 42%;
-  color: #000;
-}
-.kerala {
-  top: 85%;
-  left: 38%;
-  color: #000;
-}
-.karnataka {
-  top: 72%;
-  left: 35%;
-  color: #000;
-}
-.punjab {
-  top: 20%;
-  left: 38%;
-  color: #000;
-}
-.rajasthan {
-  top: 35%;
-  left: 28%;
-  color: #000;
-}
+
 
 /* SIGN UP / LOGIN  */
 .registration-container {
