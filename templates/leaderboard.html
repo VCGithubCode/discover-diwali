@@ -21,7 +21,7 @@
                     {% if loop.index == 1 %}
                     <i class="fas fa-crown"></i>
                     {% elif loop.index == 2 %}
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star "></i>
                     {% elif loop.index == 3 %}
                     <i class="fas fa-medal"></i>
                     {% else %}
@@ -39,7 +39,7 @@
                     {{ user.username | capitalize }}
                 </td>                               
                 <td style="font-size: 1.2em;">
-                    <i class="fas fa-star"></i> {{ user.score }}
+                    <i class="fas fa-star star-color"></i> {{ user.score }}
                 </td>
                 <td style="font-size: 0.9em;">
                     {% if user.last_score_date %}
