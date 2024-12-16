@@ -72,6 +72,17 @@
     width: 3rem;
     left: 35%;
   }
+  .question-box {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .ans {
+      font-size: 1em;
+      padding: 8px;
+      margin: 5px 0;
+      width: 90%; /* Ensure buttons scale */
+  }
 }
 
 /* Question Box */
@@ -370,5 +381,36 @@
 
   .countdown-image {
       display: none; /* Hide decorative image for very small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+      width: 90%;
+      height: auto;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 0.9em;
+  }
+
+    .modal h5 {
+        font-size: 1.2em;
+    }
+
+    .modal ol {
+        padding-left: 15px;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .menu-items .btn {
+      width: 80%; /* Make buttons take more horizontal space */
+      padding: 10px;
+      text-align: center;
   }
 }

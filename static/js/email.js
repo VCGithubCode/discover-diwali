@@ -1,6 +1,6 @@
 function sendMail(contactForm){
     if (validateForm()) {
-        emailjs.send("service_tx73at4","template_1ode6xb",{
+        emailjs.send("service_wsyeaez","template_1ode6xb",{
             name: contactForm.name.value.trim(),
             message: contactForm.message.value.trim(),
             reply_to: contactForm.email.value.trim()
