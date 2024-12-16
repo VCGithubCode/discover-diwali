@@ -1608,32 +1608,10 @@ p.ans {
 .city-label {
   font-size: 12px;
   font-family: Arial, sans-serif;
-  fill: #333;
+  fill: #000;
   pointer-events: none;
   text-anchor: middle;
-}
-
-.india-map {
-  width: 100%;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-}
-.state-link {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #999;
-  border-radius: 5px;
-  padding: 2px 8px;
-  text-align: center;
-  font-size: 0.9em;
-  cursor: pointer;
-  z-index: 10;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-.state-link:hover {
-  background-color: #f0f0f0;
-  border-color: #666;
+  text-shadow: 0.5px 0.5px 1px #FFF;
 }
 
 svg {
@@ -1643,7 +1621,7 @@ svg {
 
 .map-wrapper svg path {
   fill: #419F76;
-  stroke: #000;
+  stroke: #E5C366;
   stroke-width: 0.5;
   transition: transform 0.3s ease, fill 0.3s ease;
 }
