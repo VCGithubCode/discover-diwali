@@ -1679,52 +1679,7 @@ svg {
   pointer-events: none;
 }
 
-/* Position clickable state names */
-.uttar-pradesh {
-  top: 40%; /* Adjust percentage for accurate positioning */
-  left: 45%;
-  color: #000;
-}
-.west-bengal {
-  top: 42%;
-  left: 62%;
-  color: #000;
-}
-.gujarat {
-  top: 50%;
-  left: 20%;
-  color: #000;
-}
-.maharashtra {
-  top: 55%;
-  left: 30%;
-  color: #000;
-}
-.tamil-nadu {
-  top: 78%;
-  left: 42%;
-  color: #000;
-}
-.kerala {
-  top: 85%;
-  left: 38%;
-  color: #000;
-}
-.karnataka {
-  top: 72%;
-  left: 35%;
-  color: #000;
-}
-.punjab {
-  top: 20%;
-  left: 38%;
-  color: #000;
-}
-.rajasthan {
-  top: 35%;
-  left: 28%;
-  color: #000;
-}
+
 
 /* SIGN UP / LOGIN  */
 .registration-container {
