@@ -1733,19 +1733,6 @@ svg {
   z-index: 1;
 }
 
-.registration-img {
-  width: 220px; 
-  top: -15px;
-  left: -9%; 
-  transform: rotate(315deg);
-  z-index: 1;
-}
-
-.login-img {
-  left: 81.5%; 
-  transform: rotate(44deg);
-}
-
 .chain {
   width: 108px;
   top: -6px;
