@@ -1435,7 +1435,6 @@ main.container-fluid {
   border-radius: 6px;
   font-family: "Space Mono", monospace, Arial, Helvetica, sans-serif;
   font-weight: 400;
-  height: 10vh;
 }
 
 /* Display score */
@@ -1756,7 +1755,7 @@ svg {
 }
 
 /* -------- Style the countdown timer and holiday messages --------*/
-.countdown-container, .registration {
+.countdown-container, .registration, .quiz-wrapper {
   max-width: 800px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
