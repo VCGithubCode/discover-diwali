@@ -1680,6 +1680,14 @@ svg {
   width: 100%;
 }
 
+.input-instructions {
+  font-size: 0.9rem;
+  color: #6c757d;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
 .registration form button, .registration-btn, .zoom-button, #contactForm #submit-button, .leaderboard .leader-btn {
   background-color: #E5C366;
   box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #315cde;

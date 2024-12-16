@@ -268,3 +268,107 @@
     font-size: 0.8rem; /* Smaller font size on smaller screens */
   }
 }
+
+/* login and sign up */
+/* Ensure form inputs span full width on mobile */
+@media (max-width: 768px) {
+  .registration-container {
+    padding: 20px; /* Extra padding for mobile */
+  }
+
+  .registration {
+    width: 90%;
+    padding: 20px 10px;
+  }
+
+  .registration form input[type="text"], 
+  .registration form input[type="password"], 
+  .registration form button {
+    width: 100%; /* Full width for smaller screens */
+    margin-bottom: 10px; /* Add space between inputs */
+  }
+
+  .registration-img {
+    width: 150px !important;
+    position: static !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .registration-container {
+    padding: 15px; /* Extra padding for smaller mobile screens */
+  }
+
+  .registration {
+    width: 100%;
+  }
+
+  .registration form input[type="text"], 
+  .registration form input[type="password"], 
+  .registration form button {
+    width: 100%; /* Full width for smaller screens */
+    margin-bottom: 10px; /* Add space between inputs */
+  }
+
+  .registration-img {
+    width: 120px !important;
+    position: static !important;
+    margin: 0 auto !important;
+  }
+}
+
+.registration form button {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .registration form button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .registration form button {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Fixes for Login and Register Page on smaller screens */
+@media (max-width: 576px) {
+  .registration-container {
+      padding: 1rem !important; /* Reduce overall padding */
+  }
+
+  .registration-container h2 {
+      font-size: 1.5rem; /* Reduce heading size for small screens */
+  }
+
+  .registration-container form {
+      width: 100%; /* Full width for form */
+      padding: 0 1rem; /* Add small padding to avoid touching edges */
+  }
+
+  .registration-container input {
+      font-size: 0.9rem; /* Slightly reduce input font size */
+      padding: 0.5rem; /* Adjust padding for inputs */
+  }
+
+  .input-instructions {
+      font-size: 0.75rem; /* Reduce text size for tips */
+      text-align: left; /* Align tips to the left */
+      display: block; /* Force tips to appear below input fields */
+  }
+
+  .registration-btn {
+      font-size: 1rem; /* Button font size adjustment */
+      padding: 0.6rem 1rem; /* Adjust button padding */
+  }
+
+  .countdown-image {
+      display: none; /* Hide decorative image for very small screens */
+  }
+}

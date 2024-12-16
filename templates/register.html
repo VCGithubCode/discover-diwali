@@ -6,11 +6,30 @@
         <div>
             <h2 class="text-center mt-5 mb-5">Register</h2>
             <form class="d-flex flex-column pb-5" action="{{ url_for('register') }}" method="post">
-                <label class="text-white" for="username">Username:</label>
-                <input class="mb-3" type="text" id="username" name="username" required>
-                <label class="text-white" for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button class="mt-5 btn registration-btn" type="submit">Register</button>
+                <!-- Username -->
+                <label for="username">Choose a Username:</label>
+                <input class="mb-3" 
+                       type="text" 
+                       id="username" 
+                       name="username" 
+                       pattern="^[a-zA-Z0-9]{8}$" 
+                       title="Username must be exactly 8 characters with letters and numbers" 
+                       required>
+                    <span class="input-instructions">Tip: Create a fun username with letters and numbers, like "StarKid23"!</span>
+                
+                <!-- Password -->
+                <label for="password">Choose a Password:</label>
+                <input class="mb-3" 
+                       type="password" 
+                       id="password" 
+                       name="password" 
+                       pattern="^[a-zA-Z0-9]{8}$" 
+                       title="Password must be exactly 8 characters with letters and numbers" 
+                       required>
+                    <span class="input-instructions">Tip: Use a secret code with 8 letters and numbers, like "Magic1234"!</span>
+
+                <!-- Submit Button -->
+                <button class="mt-4 btn registration-btn" type="submit">Register</button>
             </form>
         </div>
     </div>
