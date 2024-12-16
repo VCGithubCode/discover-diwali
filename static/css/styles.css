@@ -1554,6 +1554,12 @@ p.ans {
   max-width: 900px;
   margin-top: 80px;
 }
+
+.map-container h1, .map-container p {
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+}
+
 .map-wrapper {
   width: 100%;
   height: 100%;
@@ -1625,7 +1631,7 @@ svg {
 }
 
 .back-button {
-  width: 2.5rem;
+  width: 4rem;
   fill: #E5C366;
   background-color: transparent;
 }
@@ -1635,7 +1641,7 @@ svg {
 }
 
 .back-button:hover {
-  width: 2.5rem;
+  width: 4rem;
   fill: #b68e1f;
   background-color: transparent;
 }
@@ -1800,6 +1806,10 @@ svg {
   transition: all 0.3s ease;
   padding: 1rem;
   z-index: 0;
+}
+
+.map-wrapper {
+  background-image: linear-gradient(whitesmoke, whitesmoke,#A3F6FF);
 }
 
 .state-details {
