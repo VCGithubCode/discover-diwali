@@ -35,8 +35,38 @@ AVATARS = [
     "avatar1.jpg", "avatar2.jpg", "avatar3.jpg", "avatar4.jpg", "avatar5.jpg", "avatar6.jpg", "avatar7.jpg", "avatar8.jpg", "avatar9.jpg", "avatar10.jpg", "avatar11.jpg", "avatar12.jpg", "avatar13.jpg", "avatar14.jpg", "avatar15.jpg"
 ]
 STATES = [
-    "Punjab", "Rajastan", "Uttar Pradesh", "Gujarat", "Maharashtra", "Karnataka", "Kerala", "Tamil Nadu", "West Bengal"
+    "Punjab", 
+    "Rajasthan", 
+    "Uttar Pradesh", 
+    "Gujarat", 
+    "Maharashtra", 
+    "Karnataka", 
+    "Kerala", 
+    "Tamil Nadu", 
+    "West Bengal",
+    "Jammu and Kashmir",
+    "Himachal Pradesh",
+    "Uttarakhand",
+    "Haryana",
+    "Delhi",
+    "Bihar",
+    "Madhya Pradesh",
+    "Sikkim",
+    "Assam",
+    "Arunachal Pradesh",
+    "Mizoram",
+    "Tripura",
+    "Odisha",
+    "Chhattisgarh",
+    "Telangana",
+    "Andhra Pradesh",
+    "Jharkhand",
+    "Meghalaya",
+    "Nagaland",
+    "Goa",
+    "Manipur"
 ]
+
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
