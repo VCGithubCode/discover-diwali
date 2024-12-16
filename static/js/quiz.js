@@ -375,6 +375,10 @@ function resetGame() {
     nextButton.style.display = "none";
 }
 
+function openModal() {
+    document.getElementById("instructions").style.display = "block";
+}
+
 // Event listener for the reset button and Next button
 resetButton.addEventListener("click", resetGame);
 nextButton.addEventListener("click", nextQuestion);
