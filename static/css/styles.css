@@ -2085,3 +2085,14 @@ td .leaderboard-avatar {
   fill: #E5C366;
   filter: drop-shadow(6px 6px 4px #000);
 }
+
+/* ------ Fireworks ------ */
+#fireworks-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: auto;
+}
