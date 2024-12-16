@@ -262,6 +262,11 @@ ul.list-unstyled.p-3 {
   z-index: -1;
 }
 
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .nav {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
@@ -1578,7 +1583,8 @@ p.ans {
   margin-top: 80px;
 }
 
-.map-container h1, .map-container p, .contact-page h1, .contact-page p, .page h1, .leaderboard h1, .leaderboard p {
+.map-container h1, .map-container p, .contact-page h1, .contact-page p, .page h1, .leaderboard h1, .leaderboard p,
+.profile h1, .profile h3, .profile p {
   color: #fff;
   text-shadow: 2px 2px 2px #000;
 }
@@ -2021,22 +2027,61 @@ td .leaderboard-avatar {
 
 .fa-crown, .fa-award {
   color: gold;
+  filter: drop-shadow(1.5px 1.5px 1px #000);
 }
 
 .fa-star, .award-silver {
   color: silver;
+  filter: drop-shadow(1.5px 1.5px 1px #000);
 }
 
 .fa-medal, .award-bronze {
   color: #cd7f32;
+  filter: drop-shadow(1.5px 1.5px 1px #000);
 
 }
-.fa-star {
+.star-color {
   color: #E5C366;
+  filter: drop-shadow(1.5px 1.5px 1px #000);
 }
 
 /* THANK YOU PAGE */
 
 .thankyou-wrapper {
   margin-top: 15%;
+}
+
+/* PROFILE PAGE */
+
+.profile .avatar-img {
+  border: 6px solid transparent;
+}
+
+.profile .avatar-img:hover {
+  border: 6px solid #E5C366;
+}
+
+.profile .progress {
+  height: 40px;
+  color: #000;
+  box-shadow: 2px 2px 4px #0a1840, -2px -2px 4px #267dd6;
+}
+
+.profile .progress .progress-bar {
+  background-color: #E5C366;
+  color: #000;
+  box-shadow: 1px 1px 4px #000;
+}
+
+.profile .list-group-item {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.6), 0px 0px 10px rgba(255, 255, 255, 0.45);
+  color: var(--bs-black);
+  text-align: center;
+}
+
+.profile .list-group-item path {
+  fill: #E5C366;
+  filter: drop-shadow(6px 6px 4px #000);
 }
