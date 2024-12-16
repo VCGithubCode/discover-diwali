@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Whoops! Page Not Found! Lets get you back to the festivities</h1>
-<div id="error-img">
-	<img src="/static/img/error-image.jpg" alt="page not found">
-</div>
-<div class="error-message">
-	<button id="error-button"><a href="{{ url_for('index') }}">Home Page</a></button>
-</div>
-<div class="error-message">
-	<p>-"Let the light within you shine as bright as the Diwali diyas"</p>
+<div class="container-fluid thankyou-wrapper text-center">
+	<h1>Whoops! Page Not Found! Lets get you back to the festivities</h1>
+	<div id="error-img">
+		<img src="/static/img/error-image.jpg" alt="page not found">
+	</div>
+	<div class="error-message">
+		<button id="error-button" class="mt-2"><a href="{{ url_for('index') }}">Home Page</a></button>
+	</div>
+	<div class="error-message">
+		<p>"Let the light within you shine as bright as the Diwali diyas"</p>
+	</div>
 </div>
 {% endblock %}
