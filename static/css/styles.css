@@ -1439,15 +1439,13 @@ main.container-fluid {
   font-weight: 400;
   font-family: "Lora", serif, sans-serif;
   font-weight: 700;
-  height: 10vh;
-
 }
 
 /* Display score */
 .score {
   font-weight: 700;
   font-size: xx-large;
-  height: 10vh;
+  height: 10dvh;
   margin-top: 10%;
   width: fit-content;
 }
@@ -1458,18 +1456,19 @@ p.ans {
   cursor: pointer;
 }
 .ans {
-  background-color: rgba(248, 216, 100, 0.6);
-  color: #800707;
-  height: 6vh;
-  border: 0.5px solid #800707;
+  background-color: #E5C366;
+  color: #000;
+  height: 6dvh;
+  border: 0.5px solid none;
   border-radius: 6px;
+  box-shadow: 1px 1px 2px #000;
   text-align: center;
   margin-bottom: 10px;
   width: 42%;
   cursor: pointer;
 }
 .ans:hover {
-  background-color: rgba(230, 220, 200, 0.6);
+  background-color: #b68e1f;
 }
 .green {
   background-color: green !important;
@@ -1479,23 +1478,15 @@ p.ans {
 }
 
 #next {
-  background-color: rgba(248, 216, 100, 0.6);
-  color: #800707;
   font-size: large;
   font-weight: 700;
   height: 6vh;
-  border: 0.5px solid #800707;
   border-radius: 6px;
   text-align: center;
   margin-bottom: 10px;
   width: 42%;
   cursor: pointer;
 }
-
-#next:hover {
-  
-    background-color: rgba(230, 220, 200, 0.6);
-  }
 
 /* Style responsive UX */
 /* For screen sizes with widths less than 1300px */
