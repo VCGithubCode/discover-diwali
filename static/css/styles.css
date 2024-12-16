@@ -1578,7 +1578,7 @@ p.ans {
   margin-top: 80px;
 }
 
-.map-container h1, .map-container p, .contact-page h1, .contact-page p, .page h1 {
+.map-container h1, .map-container p, .contact-page h1, .contact-page p, .page h1, .leaderboard h1, .leaderboard p {
   color: #fff;
   text-shadow: 2px 2px 2px #000;
 }
@@ -1680,7 +1680,7 @@ svg {
   width: 100%;
 }
 
-.registration form button, .registration-btn, .zoom-button, #contactForm #submit-button {
+.registration form button, .registration-btn, .zoom-button, #contactForm #submit-button, .leaderboard .leader-btn {
   background-color: #E5C366;
   box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #315cde;
   border: none;
@@ -1690,7 +1690,7 @@ svg {
   font-size: small;
 }
 
-.registration form button:hover, .registration-btn:hover, .zoom-button:hover, #contactForm #submit-button:hover {
+.registration form button:hover, .registration-btn:hover, .zoom-button:hover, #contactForm #submit-button:hover, .leaderboard .leader-btn:hover {
   background-color: #E5C366;
   box-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
   color: #292929;
@@ -1930,7 +1930,7 @@ svg {
   font-size: 1.3rem;
 }
 
-/*--------------- STYLE MAP ZOOM -------------*/
+/* DROPDOWN MENU */
 
 /* General styling */
 .navbar-nav {
@@ -1941,7 +1941,7 @@ svg {
 }
 
 .nav-item {
-  position: relative; /* Required for dropdown positioning */
+  position: relative;
 }
 
 .nav-link {
@@ -1995,4 +1995,47 @@ li a.dropdown-item.active {
 /* Style for avatar */
 .nav-item img.rounded-circle {
   vertical-align: middle;
+}
+
+/* LEADERBOARD PAGE */
+
+.leaderboard h1, .leaderboard p {
+  font-family: 'Lora', serif;
+}
+
+.leaderboard table{
+  box-shadow: -1px -1px 5px var(--bs-white), -1px -1px 1px var(--bs-white), 1px 1px 5px var(--bs-black), 1px 1px 1px var(--bs-black);
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.leaderboard table td {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+td .leaderboard-avatar {
+  height: 100%;
+}
+
+.leaderboard-avatar img{
+  width: 40px; 
+  height: 40px; 
+  object-fit: cover;
+}
+
+.fa-crown, .fa-award {
+  color: gold;
+}
+
+.fa-star, .award-silver {
+  color: silver;
+}
+
+.fa-medal, .award-bronze {
+  color: #cd7f32;
+
+}
+.fa-star {
+  color: #E5C366;
 }
