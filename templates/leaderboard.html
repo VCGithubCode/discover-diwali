@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container mt-5">
+<div class="container-fluid leaderboard mt-5">
     <div class="text-center">
-        <h2 class="mb-4" style="font-family: 'Lora', serif; color: #FF6347;">🏆 Leaderboard 🏆</h2>
+        <h1 class="mt-5 mb-4">🏆 Leaderboard 🏆</h1>
     </div>
-    <table class="table table-hover table-striped table-bordered text-center" style="background-color: #FFEBCD;">
-        <thead class="table-dark">
+    <table class="table table-hover table-striped table-bordered text-center">
+        <thead>
             <tr>
                 <th>Rank</th>
                 <th>Player</th>
@@ -19,21 +19,20 @@
             <tr>
                 <td style="font-weight: bold; font-size: 1.5em;">
                     {% if loop.index == 1 %}
-                    <i class="fas fa-crown" style="color: gold;"></i>
+                    <i class="fas fa-crown"></i>
                     {% elif loop.index == 2 %}
-                    <i class="fas fa-star" style="color: silver;"></i>
+                    <i class="fas fa-star"></i>
                     {% elif loop.index == 3 %}
-                    <i class="fas fa-medal" style="color: bronze;"></i>
+                    <i class="fas fa-medal"></i>
                     {% else %}
                     <i class="fas fa-hashtag"></i> {{ loop.index }}
                     {% endif %}
                 </td>
-                <td class="d-flex align-items-center justify-content-center" style="color: #8B0000; font-family: 'Open Sans', sans-serif;">
+                <td class="leaderboard-avatar">
                     {% if user.avatar %}
                         <img src="{{ url_for('static', filename='img/avatars/' + user.avatar) }}"
                              alt="User Avatar"
-                             class="rounded-circle me-2"
-                             style="width: 40px; height: 40px; object-fit: cover;">
+                             class="rounded-circle me-2">
                     {% else %}
                         <i class="fas fa-user me-2"></i>
                     {% endif %}
@@ -51,24 +50,24 @@
                 </td>
                 <td>
                     {% if loop.index == 1 %}
-                    <i class="fas fa-award" style="color: gold;"></i>
+                    <i class="fas fa-award"></i>
                     {% elif loop.index == 2 %}
-                    <i class="fas fa-ribbon" style="color: silver;"></i>
+                    <i class="fas fa-award award-silver"></i>
                     {% elif loop.index == 3 %}
-                    <i class="fas fa-trophy" style="color: bronze;"></i>
+                    <i class="fas fa-award award-bronze"></i>
                     {% else %}
-                    <i class="fas fa-gem" style="color: #FFD700;"></i>
+                    <i class="fas fa-gem"></i>
                     {% endif %}
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <div class="text-center mt-4">
-        <p style="font-family: 'Open Sans', sans-serif; font-size: 1.2em; color: #4682B4;">
+    <div class="text-center mt-4 mb-5">
+        <p>
             🎉 Keep playing to secure your spot on the leaderboard! 🎉
         </p>
-        <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg mt-3">
+        <a href="{{ url_for('quiz') }}" class="btn leader-btn mt-2">
             <i class="fas fa-play-circle"></i> Play Again
         </a>
     </div>
