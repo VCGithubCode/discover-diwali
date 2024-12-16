@@ -2039,3 +2039,9 @@ td .leaderboard-avatar {
 .fa-star {
   color: #E5C366;
 }
+
+/* THANK YOU PAGE */
+
+.thankyou-wrapper {
+  margin-top: 15%;
+}
