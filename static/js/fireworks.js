@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         mouse: {
             click: true,
-            move: true,
-            max: 1
+            move: false,
+            max: 2
         },
         sound: {
             enabled: false,
