@@ -74,30 +74,6 @@
   }
 }
 
-/* responsive styling for quiz */
-
-/* General Button Styles */
-.ans {
-  display: block;
-  width: 100%; /* Full width for smaller screens */
-  max-width: 300px; /* Prevent excessively wide buttons */
-  padding: 10px 20px;
-  margin: 10px auto;
-  font-size: 1rem; /* Default font size */
-  text-align: center;
-  background-color: #f8c471;
-  border: 1px solid #d35400;
-  border-radius: 10px;
-  color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
-}
-
-.ans:hover {
-  background-color: #e67e22;
-  transform: translateY(-2px);
-}
-
 /* Question Box */
 .question-box {
   background-color: #ffebcd;
