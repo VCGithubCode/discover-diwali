@@ -1931,3 +1931,68 @@ svg {
 }
 
 /*--------------- STYLE MAP ZOOM -------------*/
+
+/* General styling */
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-item {
+  position: relative; /* Required for dropdown positioning */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #E5C366;
+  box-shadow: 2px 2px 4px #0a1840, -2px -2px 4px #267dd6;
+  border-radius: 4px;
+  padding: 10px 0;
+  list-style: none;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu .dropdown-item {
+  width: 100%;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  width: 100%;
+  background-color: #b68e1f;
+  color: #000;
+}
+
+li a.dropdown-item.active {
+  width: 100%;
+  background-color: #b68e1f;
+  color: #000;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  background-color: #E5C366;
+  display: block;
+}
+
+/* Style for avatar */
+.nav-item img.rounded-circle {
+  vertical-align: middle;
+}
