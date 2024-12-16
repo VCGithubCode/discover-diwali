@@ -1563,7 +1563,7 @@ p.ans {
   margin-top: 80px;
 }
 
-.map-container h1, .map-container p {
+.map-container h1, .map-container p, .contact-page h1, .contact-page p, .page h1 {
   color: #fff;
   text-shadow: 2px 2px 2px #000;
 }
@@ -1732,7 +1732,7 @@ svg {
   width: 100%;
 }
 
-.registration form button, .registration-btn, .zoom-button {
+.registration form button, .registration-btn, .zoom-button, #contactForm #submit-button {
   background-color: #E5C366;
   box-shadow: 2px 2px 4px #2e133c, -2px -2px 4px #315cde;
   border: none;
@@ -1742,7 +1742,7 @@ svg {
   font-size: small;
 }
 
-.registration form button:hover, .registration-btn:hover, .zoom-button:hover {
+.registration form button:hover, .registration-btn:hover, .zoom-button:hover, #contactForm #submit-button:hover {
   background-color: #E5C366;
   box-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
   color: #292929;
@@ -1926,11 +1926,6 @@ svg {
 
 /* Contact Page */
 
-.contact-header {
-  background-color: var(--purple);
-  color: var(--bs-light);
-}
-
 .contact-form {
   width: 85%;
   margin: 0 auto; 
@@ -1938,21 +1933,28 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 #contactForm {
   width: 65%;
 }
 
+#contactForm #submit-button {
+
+}
+
 .contactlabel {
-  font-size: x-large;
-  padding-left: 25px;
+  color: #fff;
+  font-size: large;
 }
 
 .form-text {
   font-size: large !important;
   color: var(--bs-gray-400) !important;
+}
+
+.form-check-label a {
+  color: #E5C366;
 }
 
 /* thank you Page */
