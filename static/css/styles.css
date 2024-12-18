@@ -1259,10 +1259,9 @@ header.masthead {
   padding-bottom: 3.5rem;
   
 /* Photo by Balaji J: https://www.pexels.com/photo/lighted-candles-on-flowers-11661801/ */
-  background-image: url('/static/img/patern.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  /* background-color: #6c757d; */
+background-repeat: no-repeat;
+background-position: center center;
+background-image: url('/static/img/pattern.webp');
   box-shadow: 0 10px 50px #000;
   background-size: cover;
   background-attachment: scroll;

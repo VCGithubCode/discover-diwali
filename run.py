@@ -32,7 +32,7 @@ except Exception as e:
     users_collection = None
 
 AVATARS = [
-    "avatar1.jpg", "avatar2.jpg", "avatar3.jpg", "avatar4.jpg", "avatar5.jpg", "avatar6.jpg", "avatar7.jpg", "avatar8.jpg", "avatar9.jpg", "avatar10.jpg", "avatar11.jpg", "avatar12.jpg", "avatar13.jpg", "avatar14.jpg", "avatar15.jpg"
+    "avatar1.webp", "avatar2.webp", "avatar3.webp", "avatar4.webp", "avatar5.webp", "avatar6.webp", "avatar7.webp", "avatar8.webp", "avatar9.webp", "avatar10.webp", "avatar11.webp", "avatar12.webp", "avatar13.webp", "avatar14.webp", "avatar15.webp"
 ]
 STATES = [
     "Punjab", 
