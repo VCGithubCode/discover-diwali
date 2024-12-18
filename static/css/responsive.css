@@ -185,9 +185,9 @@
 }
 
 .countdown-image {
-  width: 100px; /* Default image size */
+  width: 108%; /* Default image size */
   position: absolute;
-  top: -3px;
+  top: -5px;
   left: 50%;
   transform: translateX(-50%);
 }
