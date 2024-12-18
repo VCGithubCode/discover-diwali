@@ -54,27 +54,27 @@
         <!-- Navigation-->     
         
         <img src="/static/img/light.jpg" alt="Hanging light Image" class="light-image light-image-back">
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
+        <nav class="navbar navbar-expand-lg navbar-light p-0" id="mainNav">
+            <div class="container px-4 px-lg-5 my-2">
                 <a class="navbar-brand" href="/">Discover Diwali</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" 
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" data-toggle="dropdown" data-target="#nestedDropdown">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="collapse navbar-collapse dropdown mt-2" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 p-2 {% if request.endpoint == 'index' %}selected{% endif %}" href="{{ url_for('index') }}">Home</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'map' %}active{% endif %}" href="{{ url_for('map') }}">Map</a>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 p-2 {% if request.endpoint == 'map' %}selected{% endif %}" href="{{ url_for('map') }}">Map</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'quiz' %}active{% endif %}" href="{{ url_for('quiz') }}">Quiz</a>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 p-2 {% if request.endpoint == 'quiz' %}selected{% endif %}" href="{{ url_for('quiz') }}">Quiz</a>
                             </li>                        
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 p-2 {% if request.endpoint == 'contact' %}selected{% endif %}" href="{{ url_for('contact') }}">Contact</a></li>
                         
                         {% if session.user %}
                             <!-- Dropdown for Logged-In User -->
-                            <li class="nav-item dropdown d-flex align-items-center ms-5">
+                            <li class="nav-item dropdown d-flex align-items-center ms-5" data-parent="#parentDropdown">
                                 <!-- Avatar as Dropdown Toggle -->
                                 {% if session.avatar %}
                                     <a class="nav-item dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -82,23 +82,23 @@
                                         <span>{{ session.user }}</span>
                                     </a>
                                 {% else %}
-                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{ session.user }}
                                     </a>
                                 {% endif %}
 
                                 <!-- Dropdown Menu -->
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                    <li><a class="dropdown-item {% if request.endpoint == 'profile' %}active{% endif %}" href="{{ url_for('profile') }}">Profile</a></li>
-                                    <li><a class="dropdown-item {% if request.endpoint == 'leaderboard' %}active{% endif %}" href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+                                    <li><a class="dropdown-item {% if request.endpoint == 'profile' %}selected{% endif %}" href="{{ url_for('profile') }}">Profile</a></li>
+                                    <li><a class="dropdown-item {% if request.endpoint == 'leaderboard' %}selected{% endif %}" href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item {% if request.endpoint == 'logout' %}active{% endif %}" href="{{ url_for('logout') }}">Logout</a></li>
+                                    <li><a class="dropdown-item {% if request.endpoint == 'logout' %}selected{% endif %}" href="{{ url_for('logout') }}">Logout</a></li>
                                 </ul>
                             </li>
                         {% else %}
                             <!-- Links for Not Logged-In Users -->
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('login') }}">Login</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('register') }}">Register</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 p-2" href="{{ url_for('login') }}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 p-2" href="{{ url_for('register') }}">Register</a></li>
                         {% endif %}
                     </ul>
                 </div>
