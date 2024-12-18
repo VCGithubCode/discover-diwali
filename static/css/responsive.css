@@ -214,10 +214,6 @@
     gap: 1rem; /* Reduce spacing */
   }
 
-  .countdown-image {
-    width: 80px; /* Smaller image */
-  }
-
   .countdown-box {
     min-width: 100px; /* Adjust box size */
     padding: 0.8rem;
