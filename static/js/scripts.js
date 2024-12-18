@@ -25,4 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         scrollPos = currentTop;
     });
-})
+
+    document.querySelector('.footer-toggle-btn').addEventListener('click', () => {
+        document.querySelector('.footer').classList.toggle('show');
+    });
+

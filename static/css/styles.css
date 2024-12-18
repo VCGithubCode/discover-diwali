@@ -1180,32 +1180,75 @@ div.navbar-collapse.dropdown.collapse.show{
   }
 }
 
-footer {
+.footer {
   width: 100%;
   background-color: var(--purple);
   border-top: 4px solid #b57ad5;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
+  position: fixed;
+  bottom: 0;
   z-index: 100;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .footer-text {
+      color: #E5C366;
+      text-shadow: 1px 1px 0.5px #000, -1px -1px 0.5px #000;
+  }
+
+  .social-tags {
+      color: #E5C366;
+      text-shadow: 2px 2px 4px #2e133c;
+      font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+      font-size: small;
+
+      &:hover {
+          text-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
+          color: #b68e1f;
+          font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
+          font-size: small;
+      }
+  }
+
+  &.show {
+      transform: translateY(0);
+  }
 }
 
-.footer-text {
-  color: #E5C366;
-  text-shadow: 1px 1px 0.5px #000, -1px -1px 0.5px #000;
+/* Keep toggle button styles separate since it needs to remain visible */
+.footer-toggle {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  width: 40px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footer-toggle-btn {
+      width: 100%;
+      height: 100%;
+      background: var(--purple);
+      border: none;
+      border-radius: 8px 8px 0 0;
+      color: white;
+      cursor: pointer;
+      border-top: 2px solid #b57ad5;
+      border-left: 2px solid #b57ad5;
+      border-right: 2px solid #b57ad5;
+
+      i {
+          transition: transform 0.3s ease;
+      }
+  }
 }
 
-.social-tags {
-  color: #E5C366;
-  text-shadow: 2px 2px 4px #2e133c;
-  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
-  font-size: small;
-}
-
-.social-tags:hover {
-  text-shadow: inset 4px 4px 5px #9e8819, inset -4px -4px 5px #f8f2d2;
-  color: #b68e1f;
-  font-family: "Lugrasimo", cursive, Arial, Helvetica, sans-serif;
-  font-size: small;
+.footer.show + .footer-toggle .footer-toggle-btn i {
+  transform: rotate(180deg);
 }
 
 header.masthead {
