@@ -1567,6 +1567,10 @@ button.navbar-toggler {
   color: #fff;
 }
 
+[data-bs-theme="contrast"] label {
+  color: #fff;
+}
+
 /* Footer Styles */
 .footerdiv li a:hover {
   color: rgba(54, 53, 53, 0.7) !important;
