@@ -4,7 +4,7 @@
 <div class="container-fluid registration-container">
     <div class="d-flex justify-content-center align-items-center registration p-3">
         <div>
-            <h2 class="text-center mt-5 mb-5">Register</h2>
+            <h2 class="text-center mt-5 mb-5 user-label">Register</h2>
             <form class="d-flex flex-column pb-5" action="{{ url_for('register') }}" method="post">
                 <!-- Username -->
                 <label for="username">Choose a Username:</label>
@@ -18,7 +18,7 @@
                     <span class="input-instructions">Tip: Create a fun username with letters and numbers, like "StarKid23"!</span>
                 
                 <!-- Password -->
-                <label for="password">Choose a Password:</label>
+                <label class="user-label" for="password">Choose a Password:</label>
                 <input class="mb-3" 
                        type="password" 
                        id="password" 
